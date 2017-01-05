@@ -1,0 +1,37 @@
+var uri = 'http://localhost/~maulayyacyber/nyimakid/';
+
+var category = new Bloodhound({
+    datumTokenizer: function(d) {
+        return Bloodhound.tokenizers.whitespace(d.judul);
+    },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch: uri+'auth/category/json_search',
+});
+category.initialize();
+category.clearPrefetchCache();
+$('#category').typeahead({
+        highlight: true,
+        hint: true,
+    },
+    {
+        displayKey: 'judul',
+        source: category.ttAdapter()
+    });
+
+var videos = new Bloodhound({
+    datumTokenizer: function(d) {
+        return Bloodhound.tokenizers.whitespace(d.judul);
+    },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch: uri+'auth/videos/json_search',
+});
+videos.initialize();
+videos.clearPrefetchCache();
+$('#videos').typeahead({
+        highlight: true,
+        hint: true,
+    },
+    {
+        displayKey: 'judul',
+        source: videos.ttAdapter()
+    });
