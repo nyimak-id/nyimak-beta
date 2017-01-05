@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label>Descriptions Category</label>
-                            <textarea id="editor" rows="6" name="descriptions" placeholder="Descriptions Category"><?php echo $data_category['deskripsi_category'] ?></textarea>
+                            <textarea class="ckeditor" rows="6" name="descriptions" placeholder="Descriptions Category"><?php echo $data_category['deskripsi_category'] ?></textarea>
                         </div>
                         <div class="submit" style="margin-bottom: 7px">
                             <button type="submit" class="btn btn-danger btn-update" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Updating..."><i class="fa fa-save"></i> Update</button>

@@ -12,7 +12,6 @@
     <link href="<?php echo base_url('resources/css/toastr.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('resources/admin/css/light-bootstrap-dashboard.css') ?>" rel="stylesheet"/>
     <link href="<?php echo base_url('resources/admin/css/custom.css') ?>" rel="stylesheet" />
-    <link href="<?php echo base_url('resources/admin/css/froala_editor.css') ?>" rel="stylesheet" />
     <link href="<?php echo base_url('resources/admin/css/pe-icon-7-stroke.css') ?>" rel="stylesheet" />
     <link href="<?php echo base_url('resources/css/font-awesome/css/font-awesome.css') ?>" rel="stylesheet" />
     <script src="<?php echo base_url('resources/admin/js/jquery-1.10.2.js') ?>" type="text/javascript"></script>

@@ -55,7 +55,7 @@
                         </div>
                         <div class="form-group">
                             <label>Descriptions Video</label>
-                            <textarea id="editor" rows="6" name="descriptions" placeholder="Descriptions Video"></textarea>
+                            <textarea class="ckeditor" rows="6" name="descriptions" placeholder="Descriptions Video"></textarea>
                         </div>
                         <div class="submit" style="margin-bottom: 7px">
                             <button type="submit" class="btn btn-danger btn-save" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Saving..."><i class="fa fa-save"></i> Simpan</button>

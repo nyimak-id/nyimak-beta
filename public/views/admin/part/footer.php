@@ -45,16 +45,13 @@
 <script src="<?php echo base_url('resources/admin/js/highcharts/highcharts.js') ?>"></script>
 <script src="<?php echo base_url('resources/admin/js/highcharts/exporting.js') ?>"></script>
 <script src="<?php echo base_url('resources/js/toastr.min.js') ?>"></script>
-<script src="<?php echo base_url('resources/admin/js/tinymce/tinymce.js') ?>"></script>
+<script src="<?php echo base_url('resources/admin/js/ckeditor/ckeditor.js') ?>"></script>
 <script src="<?php echo base_url('resources/admin/js/ajax_validation.js') ?>"></script>
 <script src="<?php echo base_url('resources/admin/js/visitor.js') ?>"></script>
 <script src="<?php echo base_url('resources/admin/js/ajax_search.js') ?>"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         NProgress.start();
-        tinymce.init({
-            selector: 'textarea'
-        });
         $('.btn-save').on('click', function() {
             var $this = $(this);
             $this.button('loading');
