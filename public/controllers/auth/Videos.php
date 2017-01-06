@@ -129,7 +129,7 @@ class Videos extends CI_Controller
             //create data array
             $data = array(
                 'title'         => 'Tambah Videos',
-                'icon'          => 'pe-7s-photo-gallery',
+                'icon'          => 'pe-7s-film',
                 'videos'        => TRUE,
                 'type'          => 'add',
                 'thumbnail'     => 'userfile',
@@ -156,7 +156,7 @@ class Videos extends CI_Controller
             //create data array
             $data = array(
                 'title'         => 'Edit Videos',
-                'icon'          => 'pe-7s-photo-gallery',
+                'icon'          => 'pe-7s-film',
                 'videos'        => TRUE,
                 'type'          => 'edit',
                 'thumbnail'     => 'userfile',

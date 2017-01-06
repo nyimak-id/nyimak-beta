@@ -34,7 +34,7 @@ class Category extends CI_Controller
             //create data array
             $data = array(
                 'title'         => 'Category',
-                'icon'          => 'pe-7s-photo-gallery',
+                'icon'          => 'pe-7s-ribbon',
                 'category'      => TRUE,
                 'data_category' => $this->auth->index_category($halaman,$config['per_page']),
                 'paging'        => $this->pagination->create_links()
@@ -96,7 +96,7 @@ class Category extends CI_Controller
 
                 $data = array(
                     'title'         => 'Category',
-                    'icon'          => 'pe-7s-photo-gallery',
+                    'icon'          => 'pe-7s-ribbon',
                     'category'      => TRUE,
                     'data_category' => $this->auth->search_index_category(strip_tags($keyword),$limit,$offset),
                     'paging'        => $this->pagination->create_links()
@@ -130,7 +130,7 @@ class Category extends CI_Controller
             //create data array
             $data = array(
                 'title'         => 'Tambah Category',
-                'icon'          => 'pe-7s-photo-gallery',
+                'icon'          => 'pe-7s-ribbon',
                 'category'      => TRUE,
                 'type'          => 'add',
                 'thumbnail'     => 'userfile'
@@ -156,7 +156,7 @@ class Category extends CI_Controller
             //create data array
             $data = array(
                 'title'         => 'Edit Category',
-                'icon'          => 'pe-7s-photo-gallery',
+                'icon'          => 'pe-7s-ribbon',
                 'category'      => TRUE,
                 'type'          => 'edit',
                 'thumbnail'     => 'userfile',

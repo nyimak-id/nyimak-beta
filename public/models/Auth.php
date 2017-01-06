@@ -213,6 +213,192 @@ class Auth extends CI_Model{
     }
     /* end fungsi video */
 
+    /* fungsi pages */
+    function count_pages()
+    {
+        return $this->db->get('tbl_pages');
+    }
+
+    function index_pages($halaman,$batas)
+    {
+        $query = "SELECT * FROM tbl_pages as a JOIN tbl_users as b ON a.user_id = b.id_user  ORDER BY a.id_page ASC limit $halaman, $batas";
+        return $this->db->query($query);
+    }
+
+    function search_pages_json()
+    {
+        $query = $this->db->get('tbl_pages');
+        return $query->result();
+    }
+
+    function total_search_pages($keyword)
+    {
+        $query = $this->db->like('judul_page',$keyword)->get('tbl_pages');
+
+        if($query->num_rows() > 0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    public function search_index_pages($keyword,$limit,$offset)
+    {
+        $query = $this->db->select('*')
+            ->from('tbl_pages a')
+            ->join('tbl_users b','a.user_id = b.id_user')
+            ->limit($limit,$offset)
+            ->like('a.judul_page',$keyword)
+            ->limit($limit,$offset)
+            ->order_by('a.id_page','ASC')
+            ->get();
+
+        if($query->num_rows() > 0)
+        {
+            return $query;
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    function edit_pages($id_page)
+    {
+        $id_page  =  array('id_page'=> $id_page);
+        return $this->db->get_where('tbl_pages',$id_page);
+    }
+    /* end fungsi pages */
+
+    /* fungsi feedback */
+    function count_feedback()
+    {
+        return $this->db->get('tbl_feedback');
+    }
+
+    function index_feedback($halaman,$batas)
+    {
+        $query = "SELECT * FROM tbl_feedback   ORDER BY id_feedback DESC limit $halaman, $batas";
+        return $this->db->query($query);
+    }
+
+    function search_feedback_json()
+    {
+        $query = $this->db->get('tbl_feedback');
+        return $query->result();
+    }
+
+    function total_search_feedback($keyword)
+    {
+        $query = $this->db->like('nama_feedback',$keyword)->get('tbl_feedback');
+
+        if($query->num_rows() > 0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    public function search_index_feedback($keyword,$limit,$offset)
+    {
+        $query = $this->db->select('*')
+            ->from('tbl_feedback')
+            ->limit($limit,$offset)
+            ->like('nama_feedback',$keyword)
+            ->limit($limit,$offset)
+            ->order_by('id_feedback','DESC')
+            ->get();
+
+        if($query->num_rows() > 0)
+        {
+            return $query;
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    function detail_feedback($id_feedback)
+    {
+        $id_feedback  =  array('id_feedback'=> $id_feedback);
+        return $this->db->get_where('tbl_feedback',$id_feedback);
+    }
+    /* end fungsi feedback */
+
+    /* fungsi bug */
+    function count_bug()
+    {
+        return $this->db->get('tbl_bug');
+    }
+
+    function index_bug($halaman,$batas)
+    {
+        $query = "SELECT * FROM tbl_bug   ORDER BY id_bug DESC limit $halaman, $batas";
+        return $this->db->query($query);
+    }
+
+    function search_bug_json()
+    {
+        $query = $this->db->get('tbl_bug');
+        return $query->result();
+    }
+
+    function total_search_bug($keyword)
+    {
+        $query = $this->db->like('nama_bug',$keyword)->get('tbl_bug');
+
+        if($query->num_rows() > 0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    public function search_index_bug($keyword,$limit,$offset)
+    {
+        $query = $this->db->select('*')
+            ->from('tbl_bug')
+            ->limit($limit,$offset)
+            ->like('nama_bug',$keyword)
+            ->limit($limit,$offset)
+            ->order_by('id_bug','DESC')
+            ->get();
+
+        if($query->num_rows() > 0)
+        {
+            return $query;
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    function detail_bug($id_bug)
+    {
+        $id_bug  =  array('id_bug'=> $id_bug);
+        return $this->db->get_where('tbl_bug',$id_bug);
+    }
+    /* end fungsi bug */
+
+    /* fungsi sistem */
+    function index_session()
+    {
+        $query = "SELECT * FROM tbl_session limit 0, 10";
+        return $this->db->query($query);
+    }
+    /* fungsi sistem */
+
     /* fungsi restrict halaman */
     function auth_id()
     {
@@ -230,4 +416,6 @@ class Auth extends CI_Model{
         $this->session->sess_destroy();
     }
     /* end fungsi logout */
+
+
 }

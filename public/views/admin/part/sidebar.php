@@ -23,7 +23,7 @@
                 </li>
                 <li <?php if(isset($category)) { echo 'class="active"'; } ?>>
                     <a href="<?php echo base_url('auth/category/') ?>">
-                        <i class="pe-7s-photo-gallery"></i>
+                        <i class="pe-7s-ribbon"></i>
                         <p>Category</p>
                     </a>
                 </li>
@@ -45,7 +45,7 @@
                         <p>Feedback </p>
                     </a>
                 </li>
-                <li <?php if(isset($feedback)) { echo 'class="active"'; } ?>>
+                <li <?php if(isset($bug)) { echo 'class="active"'; } ?>>
                     <a href="<?php echo base_url('auth/bug/') ?>">
                         <i class="pe-7s-shield"></i>
                         <p>Report Bug </p>
@@ -57,7 +57,7 @@
                         <p>User Management</p>
                     </a>
                 </li>
-                <li <?php if(isset($setting)) { echo 'class="active"'; } ?>>
+                <li <?php if(isset($sistem)) { echo 'class="active"'; } ?>>
                     <a href="<?php echo base_url('auth/sistem/') ?>">
                         <i class="pe-7s-config"></i>
                         <p>Setting Sistem</p>

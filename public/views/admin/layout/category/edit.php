@@ -3,7 +3,7 @@
         <div class="row">
             <div class="card">
                 <div class="header">
-                    <h4 class="title"><i class="pe-7s-photo-gallery"></i> Edit Category</h4>
+                    <h4 class="title"><i class="pe-7s-ribbon"></i> Edit Category</h4>
                 </div>
                 <div class="content">
                     <div class="edit-category">

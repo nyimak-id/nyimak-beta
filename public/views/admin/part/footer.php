@@ -3,23 +3,23 @@
         <nav class="pull-left">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo base_url('about/') ?>">
                         About
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo 'http://developer.nyimak.id' ?>">
                         Developer
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo base_url('bug/') ?>">
                         Report Bug
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        Feedbak
+                    <a href="<?php echo base_url('feedback/') ?>">
+                        Feedback
                     </a>
                 </li>
             </ul>
@@ -39,6 +39,8 @@
 <script src="<?php echo base_url('resources/admin/js/bootstrap-checkbox-radio-switch.js') ?>"></script>
 <script src="<?php echo base_url('resources/admin/js/bootstrap-notify.js') ?>"></script>
 <script src="<?php echo base_url('resources/admin/js/light-bootstrap-dashboard.js') ?>"></script>
+<script src="<?php echo base_url('resources/admin/js/moment.js') ?>"></script>
+<script src="<?php echo base_url('resources/admin/js/moment-with-locales.js') ?>"></script>
 <script src="<?php echo base_url('resources/js/nprogress.js') ?>"></script>
 <script src="<?php echo base_url('resources/admin/js/demo.js') ?>"></script>
 <script src="<?php echo base_url('resources/admin/js/typeahead.js') ?>"></script>

@@ -4,7 +4,7 @@
             <?php echo $this->session->flashdata('notif'); ?>
             <div class="card">
                 <div class="header">
-                    <h4 class="title"><i class="pe-7s-photo-gallery"></i> Category</h4>
+                    <h4 class="title"><i class="pe-7s-ribbon"></i> Category</h4>
                 </div>
                 <div class="content">
                     <div class="search">
@@ -15,7 +15,7 @@
                                 <i class="fa fa-plus-circle"></i> Tambah
                               </a>
                            </span>
-                            <input type = "text" name = "q" class = "typeahead tt-query" placeholder="Enter keywords and Enter" autocomplete="off" id="category">
+                            <input type = "text" name = "q" class = "typeahead tt-query" placeholder="Masukkan kata kunci dan enter" autocomplete="off" id="category">
                             <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
                             <span class = "input-group-btn">
                               <button class = "btn btn-default" type = "submit">

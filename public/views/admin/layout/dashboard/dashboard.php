@@ -58,10 +58,10 @@
                 </div>
                 <div class="content" style="font-family: Roboto;font-weight: 300">
                     <div class="btn-group">
-                        <button type="button" id="hari" onclick="javascript:GetToday('<?php print date("Y-m-d") ?>')" class="btn btn-default btn-sm" style="border-radius: 0px;border-width: 1px;"><i class="fa fa-bar-chart-o"></i></i> Hari ini</button>
-                        <button type="button" id="minggu" onclick="javascript:GetWeek(<?php print date("Y-m-d") ?>, <?php print date( "Y-m-d", strtotime( date("Y-m-d"). "-7 day" ) ) ?>)" class="btn btn-default btn-sm" style="border-radius: 0px;border-width: 1px;"><i class="fa fa-bar-chart-o"></i></i> Minggu ini</button>
-                        <button type="button" id="bulan" onclick="javascript:GetMonth(<?php print date("Y-m-d") ?>)" class="btn btn-default btn-sm" style="border-radius: 0px;border-width: 1px;"><i class="fa fa-bar-chart-o"></i></i> Bulan ini</button>
-                        <button type="button" id="tahun" onclick="javascript:GetAllTime()" class="btn btn-default btn-sm" style="border-radius: 0px;border-width: 1px;"><i class="fa fa-bar-chart-o"></i></i> Semua</button>
+                        <button type="button" id="hari" onclick="javascript:GetToday('<?php print date("Y-m-d") ?>')" class="btn btn-default btn-sm" style="border-radius: 0px;border-width: 1px;"><i class="fa fa-calendar-o"></i></i> Hari ini</button>
+                        <button type="button" id="minggu" onclick="javascript:GetWeek(<?php print date("Y-m-d") ?>, <?php print date( "Y-m-d", strtotime( date("Y-m-d"). "-7 day" ) ) ?>)" class="btn btn-default btn-sm" style="border-radius: 0px;border-width: 1px;"><i class="fa fa-calendar-o"></i></i> Minggu ini</button>
+                        <button type="button" id="bulan" onclick="javascript:GetMonth(<?php print date("Y-m-d") ?>)" class="btn btn-default btn-sm" style="border-radius: 0px;border-width: 1px;"><i class="fa fa-calendar-o"></i></i> Bulan ini</button>
+                        <button type="button" id="tahun" onclick="javascript:GetAllTime()" class="btn btn-default btn-sm" style="border-radius: 0px;border-width: 1px;"><i class="fa fa-calendar-o"></i></i> Semua</button>
                     </div>
                     <hr>
                     <div id="container"></div>
