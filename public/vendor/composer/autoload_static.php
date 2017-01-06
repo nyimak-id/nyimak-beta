@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit74c327b48f03a0a5e825c7073a3b8a72
+class ComposerStaticInit72bdc0077e863a3ad3f495a28e0a88c0
 {
     public static $prefixesPsr0 = array (
         'o' => 
@@ -14,19 +14,12 @@ class ComposerStaticInit74c327b48f03a0a5e825c7073a3b8a72
                 0 => __DIR__ . '/..' . '/mikey179/vfsStream/src/main/php',
             ),
         ),
-        'M' => 
-        array (
-            'MomentPHP' => 
-            array (
-                0 => __DIR__ . '/..' . '/lawondyss/moment-php/src',
-            ),
-        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixesPsr0 = ComposerStaticInit74c327b48f03a0a5e825c7073a3b8a72::$prefixesPsr0;
+            $loader->prefixesPsr0 = ComposerStaticInit72bdc0077e863a3ad3f495a28e0a88c0::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
