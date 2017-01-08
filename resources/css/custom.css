@@ -31,7 +31,7 @@
 
 .tube-logo {
   margin-top: 3px;
-  height: 50px;
+  height: 60px;
   margin-left: 5px;
 }
 
@@ -43,7 +43,7 @@
     padding: 0;
     z-index: 3;
     border: none;
-    min-height: 6px;
+    min-height: 64px;
     -webkit-box-shadow:  0 2px 2px rgba(0,0,0,0.2);
     -moz-box-shadow:  0 2px 2px rgba(0,0,0,0.2);
     box-shadow:  0 2px 2px rgba(0,0,0,0.2);   

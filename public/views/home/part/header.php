@@ -18,7 +18,7 @@
 <nav class="navbar-tube navbar-fixed-top navbar-default" style="background-color: #ffffff;border-color: #ffffff;">
     <div class="container">
         <div class="navbar-header" style="margin-right: -15px;margin-left: -15px;">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="background: #d52f36;border-color: #d52f36;margin-top: 10px">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="background: #d52f36;border-color: #d52f36;margin-top: 15px">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar" style="background-color: #ffffff;"></span>
                 <span class="icon-bar" style="background-color: #ffffff;"></span>
@@ -32,9 +32,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right" style="border-color: #ffffff;margin-top: 9px;">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" style="border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);">
+                    <input type="text" class="form-control" placeholder="Search" style="margin-top:7px;border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);">
                     <span class="input-group-btn">
-                <button type="submit" class="btn btn-default" style="border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);background: #ddd;"><i class="fa fa-search"></i> Search</button>
+                <button type="submit" class="btn btn-default" style="margin-top:7px;border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);background: #ddd;"><i class="fa fa-search"></i> Search</button>
               </span>
                 </div>
             </form>
