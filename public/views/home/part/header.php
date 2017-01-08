@@ -32,9 +32,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right" style="border-color: #ffffff;margin-top: 9px;">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" style="margin-top:7px;border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);">
+                    <input type="text" class="form-control" placeholder="Search" style="height:40px;margin-top:3px;border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);font-size: 15px;">
                     <span class="input-group-btn">
-                <button type="submit" class="btn btn-default" style="margin-top:7px;border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);background: #ddd;"><i class="fa fa-search"></i> Search</button>
+                <button type="submit" class="btn btn-default" style="height: 40px;margin-top:3px;border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);background: #ddd;"><i class="fa fa-search"></i> Search</button>
               </span>
                 </div>
             </form>
