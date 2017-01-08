@@ -8,19 +8,19 @@
                 </div>
                 <div class="content">
                     <div class="search">
-                        <form method="GET" action="<?php echo base_url('auth/bug/search/');?>">
+                        <form method="GET" action="<?php echo base_url('auth/bug/search');?>">
                             <div class = "input-group">
                                 <input type = "text" name = "q" class = "typeahead tt-query" placeholder="Masukkan kata kunci dan enter" autocomplete="off" id="bug">
                                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <span class = "input-group-btn">
-                              <button class = "btn btn-default" type = "submit">
+                                <button class = "btn btn-default" type = "submit">
                                  <i class="fa fa-search"></i> Search
                               </button>
                            </span>
                             </div>
                         </form>
                     </div>
-                    <table class="table table-bordered table-striped" style="margin-top:20px;font-family: Roboto;font-weight: 300;">
+                        <table class="table table-bordered table-striped" style="margin-top:20px;font-family: Roboto;font-weight: 300;">
                         <tbody>
                         <thead>
                         <tr>
@@ -31,12 +31,12 @@
                             <th class="text-center" style="color: #000;"><i class="fa fa-cogs"></i> OPTIONS</th>
                         </tr>
                         </thead>
-                        <?php
-                        if($bug != NULL):
-                        $no = $this->uri->segment('4') + 1;
-                        foreach($bug->result() as $hasil):
-                            ?>
-                            <tr>
+                                        <?php
+                                        if($bug != NULL):
+                                        $no = $this->uri->segment('4') + 1;
+                                        foreach($bug->result() as $hasil):
+                                            ?>
+                                            <tr>
                                 <td class="text-center"><?php echo $no++; ?></td>
                                 <td><?php echo $hasil->nama_bug ?></td>
                                 <td><a href="mailto:<?php echo $hasil->email_bug ?>"> <?php echo $hasil->email_bug ?></a></td>
@@ -45,22 +45,23 @@
                                     <a class='badge badge-success' style="font-family: Roboto;font-weight: 400;background-color: #358420;" data-toggle="tooltip" data-placement="top" title="Detail" href='<?php echo base_url() ?>auth/bug/detail/<?php echo $this->encryption->encode($hasil->id_bug) ?>'><i class="fa fa-external-link"></i> Detail</a>
                                 </td>
                             </tr>
-                            <?php
-                        endforeach;
-                        ?>
-                        </tbody>
+                                            <?php
+                                        endforeach;
+                                        ?>
+                                        </tbody>
                     </table>
-                    <?php echo $paging ?>
-                    <?php else : ?>
-                        </tbody>
-                        </table>
-                        <div class="alert alert-danger">
+                                    <?php echo $paging ?>
+                                    <?php else : ?>
+                                        </tbody>
+                                        </table>
+                                        <div class="alert alert-danger">
                             <span><b> Warning! </b> Data tidak ada didatabase </span>
                         </div>
-                        <div class="reload" style="text-align: center;margin-bottom: 7px">
+                                        <div class="reload" style="text-align: center;margin-bottom: 7px">
                             <a  href="<?php echo base_url('auth/bug?source=reload&utf8=✓') ?>" class="btn btn-danger btn-reset" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Reloading..."><i class="fa fa-repeat"></i> Reload Page</a>
                         </div>
-                    <?php endif; ?>
+                                    <?php endif; ?>
+
                 </div>
             </div>
         </div>

@@ -51,10 +51,10 @@
                         <p>Report Bug </p>
                     </a>
                 </li>
-                <li <?php if(isset($user)) { echo 'class="active"'; } ?>>
-                    <a href="<?php echo base_url('auth/user/') ?>">
+                <li <?php if(isset($users)) { echo 'class="active"'; } ?>>
+                    <a href="<?php echo base_url('auth/users/') ?>">
                         <i class="pe-7s-user"></i>
-                        <p>User Management</p>
+                        <p>Users Management</p>
                     </a>
                 </li>
                 <li <?php if(isset($sistem)) { echo 'class="active"'; } ?>>

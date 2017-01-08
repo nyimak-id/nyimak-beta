@@ -8,7 +8,7 @@
                 </div>
                 <div class="content">
                     <div class="search">
-                        <form method="GET" action="<?php echo base_url('auth/category/search/');?>">
+                        <form method="GET" action="<?php echo base_url('auth/category/search');?>">
                         <div class = "input-group">
                            <span class = "input-group-btn">
                               <a href="<?php echo base_url('auth/category/add?source=add&utf8=✓') ?>" class = "btn btn-default" type = "button">

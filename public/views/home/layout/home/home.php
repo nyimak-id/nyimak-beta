@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-7">
             <div class="card" style="box-shadow: none;">
-                <embed width="100%" height="400" src="https://www.youtube.com/embed/VG6cB-UBV9g">
+                <iframe style="width: 100%;height: 400px" src="https://www.youtube.com/embed/VG6cB-UBV9g?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="card">
                 <div class="card-content" style="font-size: 18px;font-family: Roboto;font-weight: 300">

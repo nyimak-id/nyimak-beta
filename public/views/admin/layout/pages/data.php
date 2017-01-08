@@ -8,7 +8,7 @@
                 </div>
                 <div class="content">
                     <div class="search">
-                        <form method="GET" action="<?php echo base_url('auth/pages/search/');?>">
+                        <form method="GET" action="<?php echo base_url('auth/pages/search');?>">
                             <div class = "input-group">
                                 <input type = "text" name = "q" class = "typeahead tt-query" placeholder="Masukkan kata kunci dan enter" autocomplete="off" id="pages">
                                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
