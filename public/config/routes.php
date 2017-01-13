@@ -53,7 +53,14 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+/* Frontend */
+$route['auth/category/search/(:any)'] = "auth/category/search/$1";
+
+//videos
+//$route['auth/videos'] = "auth/videos/index";
+//$route['auth/videos/(:any)'] = "auth/videos/index/$1";
+
 /* Backend */
 
 //routing category
-$route['auth/category/search/(:any)'] = "auth/category/search";
+$route['watch/(:any)'] = "watch/detail/$1";

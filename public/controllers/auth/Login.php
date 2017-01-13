@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * @package  : Nyimak.ID - Kumpulan Video Lucu Indonesia
+ * @package  : Nyimak.ID - Kumpulan Video Indonesia
  * @author   : Fika Ridaul Maulayya <ridaulmaulayya@gmail.com>
  * @since    : 2016 - 2017
  * @license  : https://nyimak.id/license/
@@ -63,14 +63,14 @@ class Login extends CI_Controller {
                         'error'     => '<div style="color: #a20008;font-family:Roboto;margin-top: 15px">
                                             <i class="fa fa-exclamation-circle"></i> Sorry, the username is not registered.
                                         </div>',
-                        'title'     =>  'Login &rsaquo; Nyimak.ID - Kumpulan Video Lucu Indonesia'
+                        'title'     =>  'Login &rsaquo; Nyimak.ID - Kumpulan Video Indonesia'
                     );
                     $this->load->view('admin/auth/login', $data);
                 }
 
             }else{
                 $data = array(
-                    'title' => 'Login &rsaquo; Nyimak.ID - Kumpulan Video Lucu Indonesia'
+                    'title' => 'Login &rsaquo; Nyimak.ID - Kumpulan Video Indonesia'
                 );
                 $this->load->view('admin/auth/login', $data);
             }
@@ -118,14 +118,14 @@ class Login extends CI_Controller {
                         'error' => '<div style="color: #a20008;font-family:Roboto;margin-top: 15px">
                                         <i class="fa fa-exclamation-circle"></i> Sorry, password incorrect.
                                     </div>',
-                        'title'         => 'Login &rsaquo; Nyimak.ID - Kumpulan Video Lucu Indonesia'
+                        'title'         => 'Login &rsaquo; Nyimak.ID - Kumpulan Video Indonesia'
                     );
                     $this->load->view('admin/auth/login_next', $data);
                 }
             }else{
                 //create data array
                 $data = array(
-                    'title'         => 'Login &rsaquo; Nyimak.ID - Kumpulan Video Lucu Indonesia'
+                    'title'         => 'Login &rsaquo; Nyimak.ID - Kumpulan Video Indonesia'
                 );
                 $this->load->view('admin/auth/login_next', $data);
             }

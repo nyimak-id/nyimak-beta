@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * @package  : Nyimak.ID - Kumpulan Video Lucu Indonesia
+ * @package  : Nyimak.ID - Kumpulan Video Indonesia
  * @author   : Fika Ridaul Maulayya <ridaulmaulayya@gmail.com>
  * @since    : 2016 - 2017
  * @license  : https://nyimak.id/license/
@@ -149,12 +149,12 @@ class Auth extends CI_Model{
     /* fungsi video */
     function count_videos()
     {
-        return $this->db->get('tbl_category');
+        return $this->db->get('tbl_videos');
     }
 
     function index_videos($halaman,$batas)
     {
-        $query = "SELECT * FROM tbl_videos as a JOIN tbl_category as b ON a.category_id = b.id_category ORDER BY id_video DESC limit $halaman, $batas";
+        $query = "SELECT * FROM tbl_videos as a JOIN tbl_category as b ON a.category_id = b.id_category ORDER BY a.id_video DESC limit $halaman, $batas";
         return $this->db->query($query);
     }
 

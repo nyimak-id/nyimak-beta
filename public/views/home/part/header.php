@@ -8,12 +8,12 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Nyimak.ID - Kumpulan Video Lucu Indonesia</title>
+    <title>Nyimak.ID - Kumpulan Video Indonesia</title>
     <link href="<?php print base_url() ?>resources/css/custom.css" rel="stylesheet">
     <link href="<?php print base_url() ?>resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php print base_url() ?>resources/css/font-awesome/css/font-awesome.css" rel="stylesheet">
 </head>
-<body style="background: #F1F1F1;">
+<body style="background: #FAFAFA;">
 
 <nav class="navbar-tube navbar-fixed-top navbar-default" style="background-color: #ffffff;border-color: #ffffff;">
     <div class="container">
@@ -24,7 +24,7 @@
                 <span class="icon-bar" style="background-color: #ffffff;"></span>
                 <span class="icon-bar" style="background-color: #ffffff;"></span>
             </button>
-            <a class="tube-logo-navbar" href="">
+            <a class="tube-logo-navbar" href="<?php echo base_url() ?>">
                 <img class="tube-logo" src="<?php print base_url() ?>resources/images/logo.png" alt=""/>
             </a>
             <span class="green-red" style="color: #d52f36;"><strong> BETA </strong></span>
@@ -32,9 +32,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right" style="border-color: #ffffff;margin-top: 9px;">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" style="height:40px;margin-top:3px;border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);font-size: 15px;">
+                    <input type="text" class="form-control" placeholder="Search" style="margin-top:6px;border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);font-size: 15px;">
                     <span class="input-group-btn">
-                <button type="submit" class="btn btn-default" style="height: 40px;margin-top:3px;border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);background: #ddd;"><i class="fa fa-search"></i> Search</button>
+                <button type="submit" class="btn btn-default" style="margin-top:6px;border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);background: #ddd;"><i class="fa fa-search"></i> Search</button>
               </span>
                 </div>
             </form>

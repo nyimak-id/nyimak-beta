@@ -59,7 +59,7 @@
             </div>
             <div class="copyright">
                 <p class="text-footer">
-                    © 2016 Nyimak.ID - Kumpulan Video Lucu Indonesia,<br> All Rights Reserved.
+                    © 2016 Nyimak.ID - Kumpulan Video Indonesia,<br> All Rights Reserved.
                 </p>
             </div>
         </div>

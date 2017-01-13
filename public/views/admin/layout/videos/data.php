@@ -38,7 +38,7 @@
                         </thead>
                         <?php
                         if($videos != NULL):
-                        $no = $this->uri->segment('4') + 1;
+                        $no = $this->uri->segment(4) + 1;
                         foreach($videos->result() as $hasil):
                             ?>
                             <tr>

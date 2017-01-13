@@ -25,7 +25,7 @@
             </ul>
         </nav>
         <p class="copyright pull-right">
-            &copy; 2016 Nyimak.ID - Kumpulan Video Lucu Indonesia, All Rights Reserved.
+            &copy; 2016 Nyimak.ID - Kumpulan Video Indonesia, All Rights Reserved.
         </p>
     </div>
 </footer>

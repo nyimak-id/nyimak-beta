@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * @package  : Nyimak.ID - Kumpulan Video Lucu Indonesia
+ * @package  : Nyimak.ID - Kumpulan Video Indonesia
  * @author   : Fika Ridaul Maulayya <ridaulmaulayya@gmail.com>
  * @since    : 2016 - 2017
  * @license  : https://nyimak.id/license/
@@ -73,7 +73,7 @@ class Category extends CI_Controller
     {
         if($this->auth->auth_id())
         {
-            $limit = 10;
+            $limit = 1;
             $this->load->helper('security');
             $keyword = $this->security->xss_clean($_GET['q']);
             $data['keyword'] = strip_tags($keyword);
