@@ -11,16 +11,18 @@ class Home extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+
         $this->load->model('web');
+        $this->load->helper('sistem');
     }
 
     public function index()
 	{
 	    $data = array(
-                'title'         => '',
-                'keywords'      => '',
-                'descriptions'  => '',
-                'author'        => '',
+                'title'         => sistem('site_title'),
+                'keywords'      => sistem('keywords'),
+                'descriptions'  => sistem('descriptions'),
+                'author'        => sistem('site_title'),
                 'video_personal'=> $this->web->get_personal_video(),
                 'video_popular' => $this->web->home_sidebar_popular()
         );
@@ -51,7 +53,7 @@ class Home extends CI_Controller {
                             '.$judul.'
                         </div>
                         <div class="card-autor" style="padding: 1px 18px;background: #ffffff">
-                            <a style="font-size: 12px;color: #767676;font-weight: 500;text-decoration: none" href="">'.$video->nama_user.'</a>
+                            <a style="font-size: 12px;color: #767676;font-weight: 500;text-decoration: none" href="'.base_url().'user/'.$video->username.'/">'.$video->nama_user.'</a>
                             <p style="color: #84909f;font-size: 11px;margin-top: 5px;padding-bottom: 5px">'.$video->views.'x ditonton </p>
                         </div>
                     </div>
@@ -82,7 +84,7 @@ class Home extends CI_Controller {
                             '.$judul.'
                         </div>
                         <div class="card-autor" style="padding: 1px 18px;background: #ffffff">
-                            <a style="font-size: 12px;color: #767676;font-weight: 500;text-decoration: none" href="">'.$video->nama_user.'</a>
+                            <a style="font-size: 12px;color: #767676;font-weight: 500;text-decoration: none" href="'.base_url().'user/'.$video->username.'/">'.$video->nama_user.'</a>
                             <p style="color: #84909f;font-size: 11px;margin-top: 5px;padding-bottom: 5px">'.$video->views.'x ditonton </p>
                         </div>
                     </div>

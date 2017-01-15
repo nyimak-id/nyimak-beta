@@ -451,6 +451,57 @@ class Auth extends CI_Model{
     }
     /* end fungsi user */
 
+    /* fungsi developers */
+    function count_developers()
+    {
+        return $this->db->get('tbl_developers');
+    }
+
+    function index_developers($halaman,$batas)
+    {
+        $query = "SELECT * FROM tbl_developers limit $halaman, $batas";
+        return $this->db->query($query);
+    }
+
+    function search_developers_json()
+    {
+        $query = $this->db->get('tbl_developers');
+        return $query->result();
+    }
+
+    function total_search_developers($keyword)
+    {
+        $query = $this->db->like('nama',$keyword)->get('tbl_developers');
+
+        if($query->num_rows() > 0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    public function search_index_developers($keyword,$limit,$offset)
+    {
+        $query = $this->db->select('*')
+            ->from('tbl_developers')
+            ->like('nama', $keyword)
+            ->limit($limit,$offset)
+            ->get();
+
+        if($query->num_rows() > 0)
+        {
+            return $query;
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+    /* fungsi developers */
+
     /* fungsi sistem */
     function index_session()
     {

@@ -189,7 +189,7 @@
     margin-bottom: 20px;
     background-size: 96px;
     background-repeat: no-repeat;
-    background-image: url(../images/user.png);
+    background-image: url(../images/avatar/user.png);
     -webkit-transition: opacity 0.075s;
     -moz-transition: opacity 0.075s;
     -ms-transition: opacity 0.075s;

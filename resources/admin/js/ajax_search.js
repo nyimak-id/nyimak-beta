@@ -107,3 +107,21 @@ $('#users').typeahead({
         displayKey: 'judul',
         source: users.ttAdapter()
     });
+
+var developers = new Bloodhound({
+    datumTokenizer: function(d) {
+        return Bloodhound.tokenizers.whitespace(d.judul);
+    },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch: uri+'auth/developers/json_search',
+});
+developers.initialize();
+developers.clearPrefetchCache();
+$('#developers').typeahead({
+        highlight: true,
+        hint: true,
+    },
+    {
+        displayKey: 'judul',
+        source: developers.ttAdapter()
+    });

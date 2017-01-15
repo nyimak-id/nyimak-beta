@@ -29,9 +29,9 @@
                     $photo = $this->session->userdata('auth_foto');
                     if($photo == "")
                     {
-                        $path = base_url('resources/images/user.png');
+                        $path = base_url('resources/images/avatar/user.png');
                     }else{
-                        $path = base_url('resources/images/avatar/'.$photo.'');
+                        $path = base_url('resources/images/avatar/thumb/'.$photo.'');
                     }
                     ?>
                     <div class="thumb-login" style="background-image: url('<?php echo $path ?>')">
@@ -59,7 +59,7 @@
             </div>
             <div class="copyright">
                 <p class="text-footer">
-                    © 2016 Nyimak.ID - Kumpulan Video Indonesia,<br> All Rights Reserved.
+                    © 2016 <?php echo sistem('admin_footer');?>,<br> All Rights Reserved.
                 </p>
             </div>
         </div>

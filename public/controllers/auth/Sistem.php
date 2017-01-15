@@ -39,4 +39,29 @@ class Sistem extends CI_Controller
             return FALSE;
         }
     }
+
+    public function save()
+    {
+        if($this->auth->auth_id())
+        {
+            $id['id_sistem'] = $this->encryption->decode($this->input->post('id_sistem'));
+            //create var update array
+            $update = array(
+                        'admin_title'   => $this->input->post('admin_title'),
+                        'admin_footer'  => $this->input->post('admin_footer'),
+                        'site_title'    => $this->input->post('site_title'),
+                        'site_footer'   => $this->input->post('site_footer'),
+                        'keywords'      => $this->input->post('keywords'),
+                        'descriptions'  => $this->input->post('descriptions')
+            );
+            $this->db->update('tbl_sistem', $update, $id);
+            $this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible" style="font-family:Roboto">
+			                                                    <i class="fa fa-check"></i> Sistem Berhasil Diupdate.
+			                                                </div>');
+            redirect('auth/sistem?source=update&utf8=✓');
+        }else{
+            show_404();
+            return FALSE;
+        }
+    }
 }

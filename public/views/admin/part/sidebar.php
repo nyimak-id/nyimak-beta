@@ -51,6 +51,12 @@
                         <p>Report Bug </p>
                     </a>
                 </li>
+                <li <?php if(isset($developers)) { echo 'class="active"'; } ?>>
+                    <a href="<?php echo base_url('auth/developers/') ?>">
+                        <i class="pe-7s-coffee"></i>
+                        <p>Developers</p>
+                    </a>
+                </li>
                 <li <?php if(isset($users)) { echo 'class="active"'; } ?>>
                     <a href="<?php echo base_url('auth/users/') ?>">
                         <i class="pe-7s-user"></i>
@@ -61,12 +67,6 @@
                     <a href="<?php echo base_url('auth/sistem/') ?>">
                         <i class="pe-7s-config"></i>
                         <p>Setting Sistem</p>
-                    </a>
-                </li>
-                <li class="active-pro">
-                    <a href="<?php echo base_url('auth/dashboard/logout/') ?>">
-                        <p>Logout Sistem <i class="pe-7s-power"></i></p>
-
                     </a>
                 </li>
             </ul>

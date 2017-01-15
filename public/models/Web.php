@@ -62,6 +62,14 @@ class Web extends CI_Model
         }
     }
 
+    function get_developers($page){
+        $offset = 12 * $page;
+        $limit  = 12;
+        $query  = "SELECT * FROM tbl_developers limit $offset ,$limit";
+        $result = $this->db->query($query)->result();
+        return $result;
+    }
+
     //fungsi date
     // Fungsi GLobal //
     function tgl_time_indo($date=null){

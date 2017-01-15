@@ -46,7 +46,7 @@
             </div>
             <div class="copyright">
                 <p class="text-footer">
-                    © 2016 Nyimak.ID - Kumpulan Video Indonesia, <br>All Rights Reserved.
+                    © 2016 <?php echo sistem('admin_footer');?>, <br>All Rights Reserved.
                 </p>
             </div>
         </div>
