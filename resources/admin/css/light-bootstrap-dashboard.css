@@ -496,7 +496,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   color: #888888;
 }
 .btn:hover, .btn:focus, .btn:active, .btn.active, .open > .btn.dropdown-toggle {
-  background-color: transparent;
+  background-color: #f1f1f1;
   color: #777777;
   border-color: #777777;
 }

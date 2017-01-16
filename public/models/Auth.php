@@ -500,6 +500,12 @@ class Auth extends CI_Model{
             return NULL;
         }
     }
+
+    function edit_developers($id_developer)
+    {
+        $id_developer  =  array('id_developer'=> $id_developer);
+        return $this->db->get_where('tbl_developers', $id_developer);
+    }
     /* fungsi developers */
 
     /* fungsi sistem */

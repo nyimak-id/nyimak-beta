@@ -35,12 +35,12 @@ class Pages extends CI_Controller
         foreach($developers as $developer){
             echo '<div class="col-md-3">
                     <div class="card" style="min-height: 230px">
-                        <div class="card-image" style="height: 250px;min-height: 250px">
+                        <div class="card-image" style="height: 250px;min-height: 200px">
                             <img class="img-responsive" src="'.base_url().'resources/images/developers/thumb/'.$developer->foto.'" style="width: 100%;height: 100%">
                         </div>
                         <div class="card-content" style="min-height: 60px;text-align: center;">
-                            <p style="margin-bottom: 2px">'.$developer->nama.'</p>
-                            <p style="color: #84909f;font-style: italic;font-size: 12px;margin-bottom: 5px"> '.$developer->jabatan.'</p>
+                            <p style="margin-bottom: 2px;font-size:20px;font-family:Roboto;font-weight:300">'.$developer->nama.'</p>
+                            <p style="color: #84909f;font-size: 15px;margin-bottom: 15px;margin-top:10px;font-familiy:Roboto;font-weight:300"> '.$developer->jabatan.'</p>
                             <a data-original-title="LinkedIn" rel="tooltip" href="'.$developer->linkedin.'" target="_blank" class="btn btn-linkedin btn-sm" data-placement="left">
                                 <i class="fa fa-linkedin"></i>
                             </a>

@@ -45,55 +45,7 @@
                         </div>
                     </div>
             </div>
-            <div class="card">
-                <div class="header">
-                    <h4 class="title"><i class="pe-7s-config"></i> Server Information</h4>
-                </div>
-                <div class="content">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="card-visitor" style="background-color: #f1f1f1;margin-bottom: 10px">
-                                <div class="header" style="text-align: center">
-                                    <h5 class="title"><i class="fa fa-hdd-o"></i> WEB SERVER</h5>
-                                </div>
-                                <div class="count-visitor" style="text-align: center;margin-bottom: 15px;padding-bottom: 30px;margin-top: 20px;font-size: 15px;font-family: Roboto;font-weight: 300">
-                                    <?php print $_SERVER['SERVER_SOFTWARE'] ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="card-visitor" style="background-color: #f1f1f1;margin-bottom: 10px">
-                                <div class="header" style="text-align: center">
-                                    <h5 class="title"><i class="fa fa-envelope-o"></i> SERVER ADMIN</h5>
-                                </div>
-                                <div class="count-visitor" style="text-align: center;margin-bottom: 15px;padding-bottom: 30px;margin-top: 20px;font-size: 15px;font-family: Roboto;font-weight: 300">
-                                    <?php print $_SERVER['SERVER_ADMIN'] ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="card-visitor" style="background-color: #f1f1f1;margin-bottom: 10px">
-                                <div class="header" style="text-align: center">
-                                    <h5 class="title"><i class="fa fa-globe"></i> SERVER PROTOKOL</h5>
-                                </div>
-                                <div class="count-visitor" style="text-align: center;margin-bottom: 15px;padding-bottom: 30px;margin-top: 20px;font-size: 15px;font-family: Roboto;font-weight: 300">
-                                    <?php print $_SERVER['SERVER_PROTOCOL'] ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="card-visitor" style="background-color: #f1f1f1;margin-bottom: 10px">
-                                <div class="header" style="text-align: center">
-                                    <h5 class="title"><i class="fa fa-map-marker"></i> IP ADDRESS</h5>
-                                </div>
-                                <div class="count-visitor" style="text-align: center;margin-bottom: 15px;padding-bottom: 30px;margin-top: 20px;font-size: 15px;font-family: Roboto;font-weight: 300">
-                                    <?php print $_SERVER['REMOTE_ADDR'] ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div class="card">
                 <div class="header">
                     <h4 class="title"><i class="pe-7s-config"></i> Session Information</h4>

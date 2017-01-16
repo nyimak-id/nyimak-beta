@@ -359,6 +359,92 @@ $(document).ready(function(){
 });
 
 
+//ajax validation add developers
+$(document).ready(function(){
+    $(".add-developers form").submit(function() {
+        var thumbnail   = $("[name='userfile']").val();
+        var nama        = $("[name='nama']").val();
+        var jabatan     = $("[name='jabatan']").val();
+        var linkedin    = $("[name='linkedin']").val();
+        if(thumbnail.length == 0){
+            setTimeout(function() {
+                /*toastr.error('Email is still empty');*/
+                var opts = {
+                    "debug": false,
+                    "positionClass": "toast-top-right",
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "2000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+                toastr.error("Pilih foto developer.", "ERROR !", opts);
+            }, 1000);
+        }else if(nama.length == 0){
+            setTimeout(function() {
+                /*toastr.error('Email is still empty');*/
+                var opts = {
+                    "debug": false,
+                    "positionClass": "toast-top-right",
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "2000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+                toastr.error("Masukkan nama developer.", "ERROR !", opts);
+            }, 1000);
+        }else if(jabatan.length == 0){
+            setTimeout(function() {
+                /*toastr.error('Email is still empty');*/
+                var opts = {
+                    "debug": false,
+                    "positionClass": "toast-top-right",
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "2000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+                toastr.error("Masukkan jabatan developer.", "ERROR !", opts);
+            }, 1000);
+        }else if(linkedin.length == 0){
+            setTimeout(function() {
+                /*toastr.error('Email is still empty');*/
+                var opts = {
+                    "debug": false,
+                    "positionClass": "toast-top-right",
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "2000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+                toastr.error("Masukkan linkedin developer.", "ERROR !", opts);
+            }, 1000);
+        }else{
+            return true;
+        }
+        return false;
+    })
+});
+
 //ajax validation sistem
 $(document).ready(function(){
     $(".edit-sistem form").submit(function() {

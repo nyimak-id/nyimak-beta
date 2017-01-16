@@ -51,10 +51,10 @@
                                         <a data-original-title="Google+" rel="tooltip" data-toggle="tooltip" title="Google +" data-placement="top"  href="https://plus.google.com/share?url=<?php echo base_url()?>watch/<?php echo $detail_video->slug_video ?>/" target="_blank" class="btn btn-google" data-placement="left">
                                             <i class="fa fa-google-plus"></i>
                                         </a>
-                                        <a data-original-title="LinkedIn" rel="tooltip" data-toggle="tooltip" title="Linkedin" data-placement="top"  href="#" class="btn btn-linkedin" data-placement="left">
+                                        <a data-original-title="LinkedIn" rel="tooltip" data-toggle="tooltip" title="Linkedin" data-placement="top"  href="#!" class="btn btn-linkedin" data-placement="left">
                                             <i class="fa fa-linkedin"></i>
                                         </a>
-                                        <a data-original-title="Pinterest" rel="tooltip" data-toggle="tooltip" title="Pinterest" data-placement="top" class="btn btn-pinterest" data-placement="left">
+                                        <a data-original-title="Pinterest" rel="tooltip" data-toggle="tooltip" title="Pinterest" data-placement="top" href="#!"  class="btn btn-pinterest" data-placement="left">
                                             <i class="fa fa-pinterest"></i>
                                         </a>
                                     </p>
@@ -68,8 +68,8 @@
                                         <?php echo $detail_video->deskripsi_video ?>
                                     </p>
                                     <hr>
-                                    <p><strong>Kategori</strong> : <a href="<?php echo base_url() ?>category/<?php echo $detail_video->slug_category ?>/"> <?php echo $detail_video->nama_category ?></a></p>
-                                    <p><strong>Publish</strong>  : <?php echo $this->web->tgl_tunggal($detail_video->date_created) ?> <?php echo $this->web->bulan_inggris($detail_video->date_created) ?>, <?php echo $this->web->year_tunggal($detail_video->date_created) ?></p>
+                                    <p><strong>Category </strong>  <a href="<?php echo base_url() ?>category/<?php echo $detail_video->slug_category ?>/" style="margin-left: 20px"> <?php echo $detail_video->nama_category ?></a></p>
+                                    <p><strong>Publish</strong>   <span style="margin-left: 30px"><?php echo $this->web->tgl_tunggal($detail_video->date_created) ?> <?php echo $this->web->bulan_inggris($detail_video->date_created) ?>, <?php echo $this->web->year_tunggal($detail_video->date_created) ?></span></p>
                                 </div>
                             </div>
                         </div>
