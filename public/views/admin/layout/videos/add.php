@@ -58,8 +58,8 @@
                             <textarea class="ckeditor" rows="6" name="descriptions" placeholder="Descriptions Video"></textarea>
                         </div>
                         <div class="submit" style="margin-bottom: 7px">
-                            <button type="submit" class="btn btn-danger btn-save" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Saving..."><i class="fa fa-save"></i> Simpan</button>
-                            <button type="reset" class="btn btn-warning btn-reset" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Resetting..."><i class="fa fa-repeat"></i> Reset</button>
+                            <button type="submit" class="btn btn-danger btn-save btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Saving..."><i class="fa fa-save"></i> Simpan</button>
+                            <button type="reset" class="btn btn-warning btn-reset btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Resetting..."><i class="fa fa-repeat"></i> Reset</button>
                         </div>
                         <?php echo form_close(); ?>
                     </div>

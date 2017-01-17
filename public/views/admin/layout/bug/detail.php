@@ -17,7 +17,7 @@
                         <footer><?php echo $data_bug['date_created'] ?></footer>
                     </blockquote>
                     <hr>
-                    <a href="<?php echo base_url('auth/bug?source=reload&utf8=✓') ?>" class="btn btn-danger btn-reset" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> reloading...."><i class="fa fa-arrow-left"></i> Kembali</a>
+                    <a href="<?php echo base_url('auth/bug?source=reload&utf8=✓') ?>" class="btn btn-danger btn-reset btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> reloading...."><i class="fa fa-arrow-left"></i> Kembali</a>
                 </div>
             </div>
         </div>

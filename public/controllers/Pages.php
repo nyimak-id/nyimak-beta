@@ -35,7 +35,7 @@ class Pages extends CI_Controller
         foreach($developers as $developer){
             echo '<div class="col-md-3">
                     <div class="card" style="min-height: 230px">
-                        <div class="card-image" style="height: 250px;min-height: 200px">
+                        <div class="card-image" style="height: 235px;min-height: 235px">
                             <img class="img-responsive" src="'.base_url().'resources/images/developers/thumb/'.$developer->foto.'" style="width: 100%;height: 100%">
                         </div>
                         <div class="card-content" style="min-height: 60px;text-align: center;">

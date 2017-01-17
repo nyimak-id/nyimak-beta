@@ -38,8 +38,8 @@
                                 <textarea class="form-control" rows="4" name="descriptions" placeholder="Descriptions"><?php echo sistem('descriptions') ?></textarea>
                             </div>
                             <div class="submit" style="margin-bottom: 7px">
-                                <button type="submit" class="btn btn-danger btn-update" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Updating..."><i class="fa fa-save"></i> Update</button>
-                                <button type="reset" class="btn btn-warning btn-reset" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Resetting..."><i class="fa fa-repeat"></i> Reset</button>
+                                <button type="submit" class="btn btn-danger btn-update btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Updating..."><i class="fa fa-save"></i> Update</button>
+                                <button type="reset" class="btn btn-warning btn-reset btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Resetting..."><i class="fa fa-repeat"></i> Reset</button>
                             </div>
                             <?php echo form_close(); ?>
                         </div>
@@ -79,7 +79,7 @@
                             <span><b> Warning! </b> Data tidak ada didatabase </span>
                         </div>
                         <div class="reload" style="text-align: center;margin-bottom: 7px">
-                            <a  href="<?php echo base_url('auth/sistem?source=reload&utf8=✓') ?>" class="btn btn-danger btn-reset" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Reloading..."><i class="fa fa-repeat"></i> Reload Page</a>
+                            <a  href="<?php echo base_url('auth/sistem?source=reload&utf8=✓') ?>" class="btn btn-danger btn-reset btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Reloading..."><i class="fa fa-repeat"></i> Reload Page</a>
                         </div>
                     <?php endif; ?>
                 </div>

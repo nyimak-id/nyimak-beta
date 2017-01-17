@@ -21,12 +21,6 @@ class Web extends CI_Model
         return $this->db->query($query);
     }
 
-    function home_terbaru()
-    {
-        $query = "SELECT * FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user ORDER BY a.id_video DESC limit 0, 8";
-        return $this->db->query($query);
-    }
-
     function home_sidebar_popular()
     {
         $query = "SELECT * FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user WHERE a.views > 1000 ORDER BY a.id_video DESC limit 0, 5";
@@ -36,7 +30,7 @@ class Web extends CI_Model
     function get_videos_terbaru($page){
         $offset = 12 * $page;
         $limit  = 12;
-        $query  = "SELECT * FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user ORDER BY a.id_video DESC limit $offset ,$limit";
+        $query  = "SELECT a.id_video, a.judul_video, a.slug_video, a.thumbnail, a.category_id, a.user_id, a.views, a.date_created, b.nama_user, b.id_user, b.username FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user ORDER BY a.id_video DESC limit $offset ,$limit";
         $result = $this->db->query($query)->result();
         return $result;
     }
@@ -44,7 +38,7 @@ class Web extends CI_Model
     function get_videos_popular($page){
         $offset = 12 * $page;
         $limit  = 12;
-        $query  = "SELECT * FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user WHERE a.views > 1000 ORDER BY a.id_video DESC limit $offset ,$limit";
+        $query  = "SELECT a.id_video, a.judul_video, a.slug_video, a.thumbnail, a.category_id, a.user_id, a.views, a.date_created, b.nama_user, b.id_user, b.username FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user WHERE a.views > 1000 ORDER BY a.id_video DESC limit $offset ,$limit";
         $result = $this->db->query($query)->result();
         return $result;
     }

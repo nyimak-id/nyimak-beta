@@ -58,7 +58,7 @@
                             <span><b> Warning! </b> Data tidak ada didatabase </span>
                         </div>
                                         <div class="reload" style="text-align: center;margin-bottom: 7px">
-                            <a  href="<?php echo base_url('auth/bug?source=reload&utf8=✓') ?>" class="btn btn-danger btn-reset" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Reloading..."><i class="fa fa-repeat"></i> Reload Page</a>
+                            <a  href="<?php echo base_url('auth/bug?source=reload&utf8=✓') ?>" class="btn btn-danger btn-reset btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Reloading..."><i class="fa fa-repeat"></i> Reload Page</a>
                         </div>
                                     <?php endif; ?>
 

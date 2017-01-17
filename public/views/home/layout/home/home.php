@@ -20,12 +20,12 @@
                         <?php echo $hasil->nama_user ?>
                         <p>
                         <div class="btn-group">
-                            <button class="btn btn-danger btn-sm" style="color: #fefefe;background-color: #e62117; border-color:#e62117;border-radius: 1px;margin-top: 0px;text-transform: none"><i class="fa fa-youtube-play"></i> <?php echo $hasil->username ?></button>
-                            <button class="btn btn-default btn-sm" data-toggle="tooltip" title="videos" data-placement="right" style="color: #333;background-color: #ffffff; border-color:#ccc;border-radius: 1px;margin-top: 0px;text-transform: none"> 120</button>
+                            <a href="<?php print base_url() ?>user/<?php echo $hasil->username ?>/" class="btn btn-danger btn-sm" style="margin-right:0px;color: #fefefe;background-color: #e62117; border-color:#e62117;border-radius: 1px;margin-top: 0px;text-transform: none"><i class="fa fa-youtube-play"></i> <?php echo $hasil->username ?></a>
+                            <button class="btn btn-default btn-sm" data-toggle="tooltip" title="videos" data-placement="right" style="color: #333;background-color: #ffffff; border-color:#ccc;border-radius: 1px;margin-top: 0px;text-transform: none"> <?php echo $this->db->where("user_id", $hasil->user_id)->count_all_results("tbl_videos") ?></button>
                         </div>
-                    </div>
-                    <div class="views" style="float: right;margin-top: 18px">
-                        <?php echo $hasil->views ?>x ditonton
+                        <div class="views" style="float: right;margin-top: -10px;font-size: 15px;">
+                            <?php echo $hasil->views ?>x ditonton
+                        </div>
                     </div>
                 </div>
             </div>
