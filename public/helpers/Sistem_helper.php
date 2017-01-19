@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * @package  : Nyimak.ID - Kumpulan Video Indonesia
+ * @package  : Nyimak.ID - Make Me Happy
  * @author   : Fika Ridaul Maulayya <ridaulmaulayya@gmail.com>
  * @since    : 2016 - 2017
  * @license  : https://nyimak.id/license/

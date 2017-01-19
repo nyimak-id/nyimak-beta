@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * @package  : Nyimak.ID - Kumpulan Video Indonesia
+ * @package  : Nyimak.ID - Make Me Happy
  * @author   : Fika Ridaul Maulayya <ridaulmaulayya@gmail.com>
  * @since    : 2016 - 2017
  * @license  : https://nyimak.id/license/
@@ -39,6 +39,22 @@ class Web extends CI_Model
         $offset = 12 * $page;
         $limit  = 12;
         $query  = "SELECT a.id_video, a.judul_video, a.slug_video, a.thumbnail, a.category_id, a.user_id, a.views, a.date_created, b.nama_user, b.id_user, b.username FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user WHERE a.views > 1000 ORDER BY a.id_video DESC limit $offset ,$limit";
+        $result = $this->db->query($query)->result();
+        return $result;
+    }
+
+    function get_videos_recomended($page){
+        $offset = 12 * $page;
+        $limit  = 12;
+        $query  = "SELECT a.id_video, a.judul_video, a.slug_video, a.thumbnail, a.category_id, a.user_id, a.views, a.date_created, b.nama_user, b.id_user, b.username FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user WHERE a.date_created BETWEEN CURDATE() - INTERVAL 7 DAY AND CURDATE()  limit $offset ,$limit";
+        $result = $this->db->query($query)->result();
+        return $result;
+    }
+
+    function get_category($page){
+        $offset = 12 * $page;
+        $limit  = 12;
+        $query  = "SELECT * FROM tbl_category ORDER  BY nama_category ASC  limit $offset ,$limit";
         $result = $this->db->query($query)->result();
         return $result;
     }

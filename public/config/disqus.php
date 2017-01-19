@@ -13,7 +13,7 @@
 | Usage: Specify your forum shortname as string.
 |
 */
-$config['disqus_shortname'] = 'nyimak-id-kumpulan-video-lucu-indonesia';
+$config['disqus_shortname'] = 'nyimak-id-kumpulan-video-indonesia';
 
 /*
 |--------------------------------------------------------------------------

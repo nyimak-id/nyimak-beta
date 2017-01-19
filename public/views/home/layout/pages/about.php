@@ -16,7 +16,10 @@
             </div>
         </div>
     </div>
-    <div class="row" style="margin-top: 10px">
+    <div class="row" style="margin-top: 30px">
+        <div clas="developer" style="text-align: center;font-family: Roboto;font-size: 40px;font-weight: 300">
+            Our Developer
+        </div>
         <div id="developers"></div>
     </div>
     <div class="row">

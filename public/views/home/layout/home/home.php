@@ -104,4 +104,16 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-12"><div class="video-recomended" style="margin-top: 15px;margin-bottom: 5px;font-family: Roboto;font-weight: 300;font-size: 20px;"><i class="fa fa-youtube-play fa-lg"></i> Video Recomended</div></div>
+        <div id="videos_recomended">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="container" style="text-align: center">
+            <button class="btn btn-danger" id="load_more_recomended" data-val = "0" style="color: #fefefe;background-color: #e62117; border-color:#e62117;border-radius: 1px;margin-top: 0px;text-transform: none">More videos <img style="display: none" id="loader" src="<?php echo base_url('resources/images/loader.svg') ?>" style="width: 5px;height: 5px"></button>
+        </div>
+    </div>
+
 </div>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * @package  : Nyimak.ID - Kumpulan Video Indonesia
+ * @package  : Nyimak.ID - Make Me Happy
  * @author   : Fika Ridaul Maulayya <ridaulmaulayya@gmail.com>
  * @since    : 2016 - 2017
  * @license  : https://nyimak.id/license/
@@ -182,96 +182,94 @@ class Category extends CI_Controller
             $type              = $this->input->post("type");
             $id['id_category'] = $this->encryption->decode($this->input->post("id_category"));
             $check_category    = $this->auth->check_one('tbl_category', array('nama_category' => $this->input->post("nama_category")));
-            if($check_category != FALSE)
-            {
-                $this->session->set_flashdata('notif', '<div class="alert alert-danger alert-dismissible" style="font-family:Roboto">
-			                                                    <i class="fa fa-exclamation-circle"></i> Error! Nama category sudah terdaftar.
-			                                                </div>');
-                //redirect halaman
-                redirect('auth/category?source=add&utf8=✓');
-            }else{
                 //check value var type
-                if($type == "add")
-                {
-                    //config upload
-                    $config = array(
-                        'upload_path'   => realpath('resources/images/category/'),
-                        'allowed_types' =>'jpg|png|jpeg',
-                        'encrypt_name'  =>TRUE,
-                        'remove_spaces' =>TRUE,
-                        'overwrite'     =>TRUE,
-                        'max_size'      =>'5000',
-                        'max_width'     =>'5000',
-                        'max_height'    =>'5000'
-                    );
-                    //load library upload
-                    $this->load->library("upload",$config);
-                    //load library lib image
-                    $this->load->library("image_lib");
-
-                    $this->upload->initialize($config);
-                    if($this->upload->do_upload("userfile"))
-                    {
-                        $data_upload    = $this->upload->data();
-
-                        /* PATH */
-                        $source             = realpath('resources/images/category/'.$data_upload['file_name']);
-                        $destination_thumb  = realpath('resources/images/category/thumb/');
-
-                        // Permission Configuration
-                        chmod($source, 0777) ;
-
-                        /* Resizing Processing */
-                        // Configuration Of Image Manipulation :: Static
-                        $img['image_library'] = 'GD2';
-                        $img['create_thumb']  = TRUE;
-                        $img['maintain_ratio']= TRUE;
-
-                        /// Limit Width Resize
-                        $limit_thumb    = 600 ;
-
-                        // Size Image Limit was using (LIMIT TOP)
-                        $limit_use  = $data_upload['image_width'] > $data_upload['image_height'] ? $data_upload['image_width'] : $data_upload['image_height'] ;
-
-                        // Percentase Resize
-                        if ($limit_use > $limit_thumb) {
-                            $percent_thumb  = $limit_thumb/$limit_use ;
-                        }
-
-                        //// Making THUMBNAIL ///////
-                        $img['width']  = $limit_use > $limit_thumb ?  $data_upload['image_width'] * $percent_thumb : $data_upload['image_width'] ;
-                        $img['height'] = $limit_use > $limit_thumb ?  $data_upload['image_height'] * $percent_thumb : $data_upload['image_height'] ;
-
-                        // Configuration Of Image Manipulation :: Dynamic
-                        $img['thumb_marker'] = '';
-                        $img['quality']      = '100%' ;
-                        $img['source_image'] = $source ;
-                        $img['new_image']    = $destination_thumb ;
-
-                        // Do Resizing
-                        $this->image_lib->initialize($img);
-                        $this->image_lib->resize();
-                        $this->image_lib->clear() ;
-
-                        $insert = array(
-                            'nama_category'       => $this->input->post("nama_category"),
-                            'slug_category'       => url_title(strtolower($this->input->post("nama_category"))),
-                            'deskripsi_category'  => $this->input->post("descriptions"),
-                            'thumbnail'           => $data_upload['file_name'],
-                            'date_created'        => date("Y-m-d H:i:s")
-                        );
-                        $this->db->insert("tbl_category",$insert);
-                        //deklarasi session flashdata
-                        $this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible" style="font-family:Roboto">
-			                                                    <i class="fa fa-check"></i> Data Berhasil Disimpan.
+                if($type == "add") {
+                    if ($check_category != FALSE) {
+                        $this->session->set_flashdata('notif', '<div class="alert alert-danger alert-dismissible" style="font-family:Roboto">
+			                                                    <i class="fa fa-exclamation-circle"></i> Error! Nama category sudah terdaftar.
 			                                                </div>');
                         //redirect halaman
                         redirect('auth/category?source=add&utf8=✓');
-                    }else{
-                        $this->session->set_flashdata('notif', '<div class="alert alert-danger alert-dismissible" style="font-family:Roboto">
-			                                                    <i class="fa fa-exclamation-circle"></i> Data Gagal Disimpan '.$this->upload->display_errors('').'
-			                                                </div>');
-                        redirect('auth/category?source=add&utf8=✓');
+                    } else {
+                        //config upload
+                        $config = array(
+                            'upload_path' => realpath('resources/images/category/'),
+                            'allowed_types' => 'jpg|png|jpeg',
+                            'encrypt_name' => TRUE,
+                            'remove_spaces' => TRUE,
+                            'overwrite' => TRUE,
+                            'max_size' => '5000',
+                            'max_width' => '5000',
+                            'max_height' => '5000'
+                        );
+                        //load library upload
+                        $this->load->library("upload", $config);
+                        //load library lib image
+                        $this->load->library("image_lib");
+
+                        $this->upload->initialize($config);
+                        if ($this->upload->do_upload("userfile")) {
+                            $data_upload = $this->upload->data();
+
+                            /* PATH */
+                            $source = realpath('resources/images/category/' . $data_upload['file_name']);
+                            $destination_thumb = realpath('resources/images/category/thumb/');
+
+                            // Permission Configuration
+                            chmod($source, 0777);
+
+                            /* Resizing Processing */
+                            // Configuration Of Image Manipulation :: Static
+                            $img['image_library'] = 'GD2';
+                            $img['create_thumb'] = TRUE;
+                            $img['maintain_ratio'] = TRUE;
+
+                            /// Limit Width Resize
+                            $limit_thumb = 600;
+
+                            // Size Image Limit was using (LIMIT TOP)
+                            $limit_use = $data_upload['image_width'] > $data_upload['image_height'] ? $data_upload['image_width'] : $data_upload['image_height'];
+
+                            // Percentase Resize
+                            if ($limit_use > $limit_thumb) {
+                                $percent_thumb = $limit_thumb / $limit_use;
+                            }
+
+                            //// Making THUMBNAIL ///////
+                            $img['width'] = $limit_use > $limit_thumb ? $data_upload['image_width'] * $percent_thumb : $data_upload['image_width'];
+                            $img['height'] = $limit_use > $limit_thumb ? $data_upload['image_height'] * $percent_thumb : $data_upload['image_height'];
+
+                            // Configuration Of Image Manipulation :: Dynamic
+                            $img['thumb_marker'] = '';
+                            $img['quality'] = '100%';
+                            $img['source_image'] = $source;
+                            $img['new_image'] = $destination_thumb;
+
+                            // Do Resizing
+                            $this->image_lib->initialize($img);
+                            $this->image_lib->resize();
+                            $this->image_lib->clear();
+
+                            $insert = array(
+                                'nama_category' => $this->input->post("nama_category"),
+                                'slug_category' => url_title(strtolower($this->input->post("nama_category"))),
+                                'deskripsi_category' => $this->input->post("descriptions"),
+                                'thumbnail' => $data_upload['file_name'],
+                                'date_created' => date("Y-m-d H:i:s")
+                            );
+                            $this->db->insert("tbl_category", $insert);
+                            //deklarasi session flashdata
+                            $this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible" style="font-family:Roboto">
+                                                                    <i class="fa fa-check"></i> Data Berhasil Disimpan.
+                                                                </div>');
+                            //redirect halaman
+                            redirect('auth/category?source=add&utf8=✓');
+                        } else {
+                            $this->session->set_flashdata('notif', '<div class="alert alert-danger alert-dismissible" style="font-family:Roboto">
+                                                                    <i class="fa fa-exclamation-circle"></i> Data Gagal Disimpan ' . $this->upload->display_errors('') . '
+                                                                </div>');
+                            redirect('auth/category?source=add&utf8=✓');
+                        }
                     }
 
                 }elseif($type == "edit"){
@@ -379,7 +377,6 @@ class Category extends CI_Controller
 			                                                </div>');
                     redirect('auth/category?source=edit&utf8=✓');
                 }
-            }
 
         }else{
             show_404();
