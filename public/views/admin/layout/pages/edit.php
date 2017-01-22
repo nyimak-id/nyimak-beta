@@ -18,7 +18,7 @@
                         </div>
                         <div class="form-group">
                             <label>Isi Pages</label>
-                            <textarea class="ckeditor" rows="6" name="descriptions" placeholder="isi Page"><?php echo $data_pages['isi_page'] ?></textarea>
+                            <textarea class="ckeditor" rows="6" name="isi_page" placeholder="isi Page"><?php echo $data_pages['isi_page'] ?></textarea>
                         </div>
                         <div class="submit" style="margin-bottom: 7px">
                             <button type="submit" class="btn btn-danger btn-update btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Updating..."><i class="fa fa-save"></i> Update</button>

@@ -16,8 +16,16 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="<?php echo base_url('auth/dashboard/logout/') ?>" class="btn btn-danger btn-sm" style="color: #FF4A55;"> Logout <i class="fa fa-sign-out"></i></a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle btn btn-danger btn-sm" data-toggle="dropdown" style="color: #FF4A55;">
+                            <?php echo $this->session->userdata("auth_nama") ?>
+                            <b class="caret" style="margin-left: 10px"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo base_url() ?>auth/users/edit/<?php echo $this->encryption->encode($this->session->userdata("auth_id")) ?>/"><i class="fa fa-user-circle"></i> Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="<?php echo base_url() ?>auth/dashboard/logout/">Logout <i class="fa fa-sign-out"></i></a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>

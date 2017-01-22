@@ -84,91 +84,40 @@
         <div class="col-md-5">
             <div class="card" style="margin-bottom: 0px">
                 <div class="card-content">
+                    <?php
+                        foreach($related_video->result() as $hasil) {
+                    ?>
 
+                    <?php
+                         if(strlen($hasil->judul_video)<60)
+                         {
+                             $judul = '<a href="'.base_url('watch').'/'.$hasil->slug_video.'/" style="font-size: 14px;font-family: Roboto;font-weight: 400;text-decoration: none" title="'.$hasil->judul_video.'">'.$hasil->judul_video.'</a>';
+                         }else{
+                             $judul = '<a href="'.base_url('watch').'/'.$hasil->slug_video.'/" style="font-size: 14px;font-family: Roboto;font-weight: 400;text-decoration: none" title="'.$hasil->judul_video.'">'.substr($hasil->judul_video, 0,60).'...</a>';
+
+                         }
+                     ?>
                     <div class="media">
-                        <div class="media-left">
-                            <a href="#">
-                                <img class="media-object" src="https://i.ytimg.com/vi/3ucQG2HQxMc/hqdefault.jpg?custom=true&w=196&h=110&stc=true&jpg444=true&jpgq=90&sp=68&sigh=Z1y1wa523MDCka7p7HzWuYjkMB8" style="width: 168px;height: 94px" alt="...">
-                            </a>
+                       <div class="media-left">
+                           <a href="#">
+                                        <img class="media-object" src="<?php echo base_url() ?>resources/images/videos/thumb/<?php echo $hasil->thumbnail ?>" style="width: 168px;height: 94px" alt="<?php echo $hasil->judul_video ?>">
+                           </a>
                         </div>
                         <div class="media-body">
-                            <a class="link-videos" href="" style="color: #333;text-decoration: none">
-                                <h4 style="font-family: Roboto;font-weight: 400;font-size: 14px" class="media-heading">Video Gokil Bikin Ngakak Part 1</h4>
+                           <a class="link-videos" href="" style="color: #333;text-decoration: none">
+                              <h4 style="font-family: Roboto;font-weight: 400;font-size: 14px" class="media-heading"><?php echo $judul ?></h4>
                             </a>
-                            <a href="" style="text-decoration: none;font-size: 13px;font-family: Roboto;font-weight: 300">Fika Ridaul Maulayya</a>
+                            <a href="<?php echo base_url() ?>user/<?php echo $hasil->username ?>/" style="text-decoration: none;font-size: 13px;font-family: Roboto;font-weight: 400;color: #84909f;"><?php echo $hasil->nama_user ?> </a>
                             <br>
-                            <span style="font-size: 12px;font-family: Roboto;font-weight: 300">123,9080 Views</span>
+                            <span style="font-size: 11px;font-family: Roboto;font-weight: 400;color: #84909f;"><?php echo $hasil->views ?>x ditonton</span>
                         </div>
                     </div>
-
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="#">
-                                <img class="media-object" src="https://i.ytimg.com/vi/uFz61X2PQTw/hqdefault.jpg?custom=true&w=196&h=110&stc=true&jpg444=true&jpgq=90&sp=68&sigh=hpfCzMndVWB9CRrK-sofzGVbqVo" style="width: 168px;height: 94px" alt="...">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a class="link-videos" href="" style="color: #333;text-decoration: none">
-                                <h4 style="font-family: Roboto;font-weight: 400;font-size: 14px" class="media-heading">Video Gokil Bikin Ngakak Part 2</h4>
-                            </a>
-                            <a href="" style="text-decoration: none;font-size: 13px;font-family: Roboto;font-weight: 300">Fika Ridaul Maulayya</a>
-                            <br>
-                            <span style="font-size: 12px;font-family: Roboto;font-weight: 300">123,9080 Views</span>
-                        </div>
-                    </div>
-
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="#">
-                                <img class="media-object" src="https://i.ytimg.com/vi/ZOPySYd5pNE/hqdefault.jpg?custom=true&w=196&h=110&stc=true&jpg444=true&jpgq=90&sp=68&sigh=b7icg5hEqJzrQEvYQwnygSjp-mk" style="width: 168px;height: 94px" alt="...">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a class="link-videos" href="" style="color: #333;text-decoration: none">
-                                <h4 style="font-family: Roboto;font-weight: 400;font-size: 14px" class="media-heading">Video Gokil Bikin Ngakak Part 3</h4>
-                            </a>
-                            <a href="" style="text-decoration: none;font-size: 13px;font-family: Roboto;font-weight: 300">Fika Ridaul Maulayya</a>
-                            <br>
-                            <span style="font-size: 12px;font-family: Roboto;font-weight: 300">123,9080 Views</span>
-                        </div>
-                    </div>
-
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="#">
-                                <img class="media-object" src="https://i.ytimg.com/vi/Ej3RjUfyFA0/hqdefault.jpg?custom=true&w=196&h=110&stc=true&jpg444=true&jpgq=90&sp=68&sigh=m3eh35bznu7Hrn64QsQQdeOROw0" style="width: 168px;height: 94px" alt="...">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a class="link-videos" href="" style="color: #333;text-decoration: none">
-                                <h4 style="font-family: Roboto;font-weight: 400;font-size: 14px" class="media-heading">Video Gokil Bikin Ngakak Part 4</h4>
-                            </a>
-                            <a href="" style="text-decoration: none;font-size: 13px;font-family: Roboto;font-weight: 300">Fika Ridaul Maulayya</a>
-                            <br>
-                            <span style="font-size: 12px;font-family: Roboto;font-weight: 300">123,9080 Views</span>
-                        </div>
-                    </div>
-
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="#">
-                                <img class="media-object" src="https://i.ytimg.com/vi/-CElhQBBmAk/hqdefault.jpg?custom=true&w=196&h=110&stc=true&jpg444=true&jpgq=90&sp=68&sigh=MdN7xY1swXFL7VtdR96mVUB73Y4" style="width: 168px;height: 94px" alt="...">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a class="link-videos" href="" style="color: #333;text-decoration: none">
-                                <h4 style="font-family: Roboto;font-weight: 400;font-size: 14px" class="media-heading">Video Gokil Bikin Ngakak Part 5</h4>
-                            </a>
-                            <a href="" style="text-decoration: none;font-size: 13px;font-family: Roboto;font-weight: 300">Fika Ridaul Maulayya</a>
-                            <br>
-                            <span style="font-size: 12px;font-family: Roboto;font-weight: 300">123,9080 Views</span>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
             <div class="card" style="margin-bottom: 0px">
                 <div class="card-content">
-                    <p style="font-family: Roboto;font-size: 20px;font-weight: 300;margin-bottom: 15px">Follow Us!</p>
+                    <p style="font-family: Roboto;font-size: 25px;font-weight: 300;margin-bottom: 15px">Follow Us!</p>
                     <div class="fb-page" data-href="https://www.facebook.com/nyimak.id" data-width="427" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/nyimak.id" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/nyimak.id">Nyimak.ID</a></blockquote></div>
                 </div>
             </div>

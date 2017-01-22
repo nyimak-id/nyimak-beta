@@ -46,7 +46,7 @@
     min-height: 64px;
     -webkit-box-shadow:  0 2px 2px rgba(0,0,0,0.2);
     -moz-box-shadow:  0 2px 2px rgba(0,0,0,0.2);
-    box-shadow:  0 2px 2px rgba(0,0,0,0.2);   
+    box-shadow:  0 2px 2px rgba(0,0,0,0.2);
     transition-duration: .2s;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-property: max-height,box-shadow;	
@@ -360,3 +360,11 @@
     .navbar-form .form-control {
         width: 40vw;
     }
+
+.link-category {
+    color: #030303;
+}
+
+.link-category:hover {
+    color: #CC1E2D;
+}

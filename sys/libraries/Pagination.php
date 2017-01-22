@@ -43,7 +43,7 @@ class CI_Pagination {
     var $last_tag_open		= '<li>';
     var $last_tag_close		= '</li>';
     var $first_url			= ''; // Alternative URL for the First Page.
-    var $cur_tag_open		= '<li class="active"><a>';
+    var $cur_tag_open		= '<li class="active"><a style="background-color: #842020;border-color: #842020">';
     var $cur_tag_close		= '</a></li>';
     var $next_tag_open		= '<li>';
     var $next_tag_close		= '</li>';

@@ -36,7 +36,7 @@
                             <input type="text" class="form-control" value="<?php echo $data_developers['linkedin'] ?>" name="linkedin" placeholder="Linkedin Developer">
                         </div>
                         <div class="submit" style="margin-bottom: 7px">
-                            <button type="submit" class="btn btn-danger btn-save btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Saving..."><i class="fa fa-save"></i> Simpan</button>
+                            <button type="submit" class="btn btn-danger btn-save btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Updating..."><i class="fa fa-save"></i> Update</button>
                             <button type="reset" class="btn btn-warning btn-reset btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Resetting..."><i class="fa fa-repeat"></i> Reset</button>
                         </div>
                         <?php echo form_close(); ?>

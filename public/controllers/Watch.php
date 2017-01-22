@@ -23,7 +23,8 @@ class Watch extends CI_Controller {
             'keywords'      => '',
             'descriptions'  => $this->web->detail_videos($url)->deskripsi_video,
             'author'        => $this->web->detail_videos($url)->nama_user,
-            'video_popular' => $this->web->home_sidebar_popular(),
+            //related video
+            'related_video' => $this->web->related_video($this->web->detail_videos($url)->category_id),
             'disqus'        => $this->disqus->get_html()
         );
         $id = $this->web->detail_videos($url)->id_video;

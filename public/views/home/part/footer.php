@@ -12,7 +12,7 @@
                                 <li><a style="color: #d52f36;" href="<?php echo base_url() ?>about/">About</a></li>
                                 <li><a style="color: #d52f36;" href="<?php echo base_url() ?>feedback/">Feedback</a></li>
                                 <li><a style="color: #d52f36;" href="<?php echo base_url() ?>bug/">Report Bug</a></li>
-                                <li><a style="color: #d52f36;" href="<?php echo base_url() ?>terms-condition/">Term & Condition</a></li>
+                                <li><a style="color: #d52f36;" href="<?php echo base_url() ?>terms-conditions/">Terms & Conditions</a></li>
                                 <li><a style="color: #d52f36;" href="<?php echo base_url() ?>contact/">Contact Us</a></li>
                             </ul>
                         </div>

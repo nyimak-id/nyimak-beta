@@ -1546,21 +1546,21 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
 .navbar-default .navbar-nav > .dropdown > a:focus .caret {
-  border-bottom-color: #1DC7EA;
-  border-top-color: #1DC7EA;
+  border-bottom-color: #EE2D20;
+  border-top-color: #EE2D20;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: transparent;
-  color: #1DC7EA;
+  color: #EE2D20;
 }
 .navbar-default .navbar-nav .navbar-toggle:hover, .navbar-default .navbar-nav .navbar-toggle:focus {
   background-color: transparent;
 }
 .navbar-default:not(.navbar-transparent) .btn-default:hover {
-  color: #1DC7EA;
-  border-color: #1DC7EA;
+  color: #EE2D20;
+  border-color: #EE2D20;
 }
 .navbar-default:not(.navbar-transparent) .btn-neutral, .navbar-default:not(.navbar-transparent) .btn-neutral:hover, .navbar-default:not(.navbar-transparent) .btn-neutral:active {
   color: #9A9A9A;

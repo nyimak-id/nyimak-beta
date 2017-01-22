@@ -20,7 +20,7 @@ class Category extends CI_Controller
     public function index()
     {
         $data = array(
-            'title'        => 'Category - ' .sistem('site_title'),
+            'title'        => 'Category &middot; ' .sistem('site_title'),
             'keywords'     => sistem('keywords'),
             'descriptions' => sistem('descriptions'),
             'author'       => sistem('site_title')
@@ -38,11 +38,11 @@ class Category extends CI_Controller
 
             echo '<div class="col-md-3">
                     <div class="card card-category">
-                        <a href="'.base_url().'category/'.$hasil->slug_category.'/" style="text-decoration: none">
+                        <a href="'.base_url().'category/'.$hasil->slug_category.'/" style="text-decoration: none" class="link-category">
                             <div class="card-image" style="height: 164px;min-height: 164px">
                                 <img class="img-responsive" src="'.base_url().'resources/images/category/thumb/'.$hasil->thumbnail.'" style="width: 100%;height: 100%">
                             </div>
-                            <div class="card-content" style="text-align:center">
+                            <div class="card-content" style="text-align:center;font-size:18px;font-weight:500;font-family:Roboto;text-transform: uppercase;">
                                 '.$hasil->nama_category.'
                             </div>
                         </a>

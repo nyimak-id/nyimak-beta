@@ -18,13 +18,28 @@ class Pages extends CI_Controller
     public function about()
     {
         $data = array(
-            'title'         => 'About - ' .sistem('site_title'),
+            'title'         => 'About &middot; ' .sistem('site_title'),
             'keywords'      => sistem('keywords'),
             'descriptions'  => sistem('descriptions'),
-            'author'        => sistem('site_title')
+            'author'        => sistem('site_title'),
+            'data_pages'    => $this->web->get_pages(1)
         );
         $this->load->view('home/part/header', $data);
         $this->load->view('home/layout/pages/about');
+        $this->load->view('home/part/footer');
+    }
+
+    public function terms_conditions()
+    {
+        $data = array(
+            'title'         => 'Terms & Conditions &middot; ' .sistem('site_title'),
+            'keywords'      => sistem('keywords'),
+            'descriptions'  => sistem('descriptions'),
+            'author'        => sistem('site_title'),
+            'data_pages'    => $this->web->get_pages(2)
+        );
+        $this->load->view('home/part/header', $data);
+        $this->load->view('home/layout/pages/terms');
         $this->load->view('home/part/footer');
     }
 
@@ -39,8 +54,8 @@ class Pages extends CI_Controller
                             <img class="img-responsive" src="'.base_url().'resources/images/developers/thumb/'.$developer->foto.'" style="width: 100%;height: 100%">
                         </div>
                         <div class="card-content" style="min-height: 60px;text-align: center;">
-                            <p style="margin-bottom: 2px;font-size:20px;font-family:Roboto;font-weight:300">'.$developer->nama.'</p>
-                            <p style="color: #84909f;font-size: 15px;margin-bottom: 15px;margin-top:10px;font-familiy:Roboto;font-weight:300"> '.$developer->jabatan.'</p>
+                            <p style="margin-bottom: 2px;font-size:24px;font-family:Roboto;font-weight:300">'.$developer->nama.'</p>
+                            <p style="color: #84909f;font-size: 15px;margin-bottom: 15px;margin-top:10px;font-familiy:Roboto;font-weight:300;font-style:italic;"> '.$developer->jabatan.'</p>
                             <a data-original-title="LinkedIn" rel="tooltip" href="'.$developer->linkedin.'" target="_blank" class="btn btn-linkedin btn-sm" data-placement="left">
                                 <i class="fa fa-linkedin"></i>
                             </a>

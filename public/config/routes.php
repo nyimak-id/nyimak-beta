@@ -59,3 +59,4 @@ $route['watch/(:any)'] = "watch/detail/$1";
 
 /* routing pages */
 $route['about'] = "pages/about";
+$route['terms-conditions'] = "pages/terms_conditions";

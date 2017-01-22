@@ -46,7 +46,7 @@ class Web extends CI_Model
     function get_videos_recomended($page){
         $offset = 12 * $page;
         $limit  = 12;
-        $query  = "SELECT a.id_video, a.judul_video, a.slug_video, a.thumbnail, a.category_id, a.user_id, a.views, a.date_created, b.nama_user, b.id_user, b.username FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user WHERE a.date_created BETWEEN CURDATE() - INTERVAL 7 DAY AND CURDATE()  limit $offset ,$limit";
+        $query  = "SELECT a.id_video, a.judul_video, a.slug_video, a.thumbnail, a.category_id, a.user_id, a.views, a.date_created, b.nama_user, b.id_user, b.username FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user WHERE a.views > 1000 AND  a.date_created BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()  limit $offset ,$limit";
         $result = $this->db->query($query)->result();
         return $result;
     }
@@ -72,12 +72,24 @@ class Web extends CI_Model
         }
     }
 
+    function related_video($category_id)
+    {
+        $query = "SELECT * FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user WHERE a.category_id ='$category_id' ORDER BY a.category_id DESC limit 0,5";
+        return $this->db->query($query);
+    }
+
     function get_developers($page){
-        $offset = 12 * $page;
-        $limit  = 12;
+        $offset = 8 * $page;
+        $limit  = 8;
         $query  = "SELECT * FROM tbl_developers limit $offset ,$limit";
         $result = $this->db->query($query)->result();
         return $result;
+    }
+
+    function get_pages($id_pages)
+    {
+        $query = $this->db->query("SELECT * FROM tbl_pages WHERE id_page = '$id_pages'");
+        return $query;
     }
 
     //fungsi date

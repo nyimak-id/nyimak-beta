@@ -32,7 +32,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search" style="border-radius: 0px;font-size: 16px;">
                     <span class="input-group-btn">
-                <button type="submit" class="btn btn-default" style="border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);background: #ddd;font-weight: 500;font-size:14px;text-transform: uppercase"><i class="fa fa-search"></i> Search</button>
+                <button type="submit" class="btn btn-default" style="border-radius: 0px;background: #f8f8f8;font-weight: 400;font-size:14px;text-transform: uppercase"><i class="fa fa-search"></i> search</button>
               </span>
                 </div>
             </form>
