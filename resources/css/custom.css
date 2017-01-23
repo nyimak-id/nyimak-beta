@@ -190,15 +190,21 @@
   text-decoration: none;
 }
 
+/*
 .card-category .card-image:hover {
-    background-image: url('../images/play.png');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 1s ease-in-out;
+    color: #d52f36;
+    background: url("../images/play.png") center center no-repeat rgba(0, 0, 0, 0.51);
+}
+*/
+
+.card-video .card-image:hover {
+    color: #d52f36;
+    background: url("../images/play.png") center center no-repeat rgba(0, 0, 0, 0.51);
+}
+
+.card-videos .card-image:hover {
+    color: #d52f36;
+    background: url("../images/play-home.png") center center no-repeat rgba(0, 0, 0, 0.51);
 }
 
 .chip {

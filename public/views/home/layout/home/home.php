@@ -6,8 +6,12 @@
                 if($video_personal != NULL):
                 foreach($video_personal->result() as $hasil):
             ?>
-            <div class="card" style="box-shadow: none;margin-bottom: 0px">
-                <iframe style="width: 100%;height: 400px" src="<?php echo $hasil->embed ?>?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1" frameborder="0" allowfullscreen></iframe>
+            <div class="card card-videos" style="box-shadow: none;margin-bottom: 0px">
+                <a href="<?php print base_url() ?>watch/<?php echo $hasil->slug_video ?>/">
+                    <div class="card-image">
+                        <img class="img-responsive" style="width: 100%" src="<?php print base_url() ?>resources/images/videos/<?php echo $hasil->thumbnail ?>">
+                    </div>
+                </a>
             </div>
             <div class="card" style="margin-bottom: 0px">
                 <div class="card-content" style="font-size: 18px;font-family: Roboto;font-weight: 300">
@@ -16,7 +20,7 @@
 
                 <div class="card-action">
                     <div class="chip">
-                        <img src="<?php print base_url() ?>resources/images/9c5e4d65dfd14f5bc5b6948fb433ec66.jpg" alt="Person" width="96" height="96">
+                        <img src="<?php print base_url() ?>resources/images/avatar/thumb/<?php echo $hasil->foto_user ?>" alt="Person" width="96" height="96">
                         <?php echo $hasil->nama_user ?>
                         <p>
                         <div class="btn-group">

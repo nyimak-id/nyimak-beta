@@ -44,10 +44,12 @@ class Home extends CI_Controller {
 
             }
             echo '<div class="col-md-3">
-                    <div class="card" style="min-height: 230px">
+                    <div class="card card-video" style="min-height: 230px">
+                    <a href="'.base_url().'watch/'.$video->slug_video.'/">
                         <div class="card-image" style="height: 164px;min-height: 164px">
                             <img class="img-responsive" src="'.base_url().'resources/images/videos/thumb/'.$video->thumbnail.'" style="width: 100%;height: 100%">
                         </div>
+                    </a>    
                         <div class="card-content" style="min-height: 60px">
                             <p style="color: #84909f;font-size: 11px;padding-bottom: 5px">'.$this->web->tgl_tunggal($video->date_created).' '.$this->web->bulan_inggris($video->date_created).', '.$this->web->year_tunggal($video->date_created).' </p>
                             '.$judul.'
@@ -75,10 +77,12 @@ class Home extends CI_Controller {
 
             }
             echo '<div class="col-md-3">
-                    <div class="card" style="min-height: 230px">
+                    <div class="card card-video" style="min-height: 230px">
+                    <a href="'.base_url().'watch/'.$video->slug_video.'/">
                         <div class="card-image" style="height: 164px;min-height: 164px">
                             <img class="img-responsive" src="'.base_url().'resources/images/videos/thumb/'.$video->thumbnail.'" style="width: 100%;height: 100%">
                         </div>
+                    </a>
                         <div class="card-content" style="min-height: 60px">
                             <p style="color: #84909f;font-size: 11px;padding-bottom: 5px">'.$this->web->tgl_tunggal($video->date_created).' '.$this->web->bulan_inggris($video->date_created).', '.$this->web->year_tunggal($video->date_created).' </p>
                             '.$judul.'
@@ -106,10 +110,12 @@ class Home extends CI_Controller {
 
             }
             echo '<div class="col-md-3">
-                    <div class="card" style="min-height: 230px">
+                    <div class="card card-video" style="min-height: 230px">
+                    <a href="'.base_url().'watch/'.$video->slug_video.'/">
                         <div class="card-image" style="height: 164px;min-height: 164px">
                             <img class="img-responsive" src="'.base_url().'resources/images/videos/thumb/'.$video->thumbnail.'" style="width: 100%;height: 100%">
                         </div>
+                    </a>
                         <div class="card-content" style="min-height: 60px">
                             <p style="color: #84909f;font-size: 11px;padding-bottom: 5px">'.$this->web->tgl_tunggal($video->date_created).' '.$this->web->bulan_inggris($video->date_created).', '.$this->web->year_tunggal($video->date_created).' </p>
                             '.$judul.'

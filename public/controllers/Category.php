@@ -30,6 +30,12 @@ class Category extends CI_Controller
         $this->load->view('home/part/footer');
     }
 
+    public function detail($slug)
+    {
+        //
+    }
+
+
     function get_category()
     {
         $page   =  $_GET['page'];

@@ -63,7 +63,7 @@
                                         <input type="text" class="form-control" value="<?php echo $detail_video->embed ?>" style="border-radius: 0px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);box-shadow: 0 1px 2px rgba(0,0,0,.1);">
                                     </p>
                                 </div>
-                                <div class="tab-pane" id="descriptions" style="font-family: Roboto;font-weight: 300">
+                                <div class="tab-pane" id="descriptions" style="font-family: Roboto;font-weight: 400">
                                     <p>
                                         <?php echo $detail_video->deskripsi_video ?>
                                     </p>
