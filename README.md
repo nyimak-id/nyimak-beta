@@ -10,3 +10,4 @@ More Info
 More Contact
 
     admin@nyimak.id
+    support@nyimak.id
