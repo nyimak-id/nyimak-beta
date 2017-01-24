@@ -5,7 +5,7 @@
         ?>
         <div class="col-md-7">
             <div class="card" style="box-shadow: none;margin-bottom: 0px">
-                <iframe style="width: 100%;height: 400px" src="<?php echo $detail_video->embed ?>?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1" frameborder="0" allowfullscreen></iframe>
+                <iframe style="width: 100%;height: 400px" src="<?php echo $detail_video->embed ?>?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1&autoplay=1" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="card" style="margin-bottom: 0px">
                 <div class="card-content" style="font-size: 18px;font-family: Roboto;font-weight: 300">

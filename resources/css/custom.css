@@ -374,3 +374,105 @@
 .link-category:hover {
     color: #CC1E2D;
 }
+
+/* responsive */
+    @media (min-width: 768px) {
+        .twitter-typeahead {
+            box-sizing: initial !important;
+            width: 40vw !important;
+        }
+    }
+    @media (min-width: 768px) {
+        .typeahead {
+            background-color: #fff;
+            position: relative;
+            z-index: 2;
+            width: 40vw;
+            margin-bottom: 0;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .tt-dropdown-menu {
+            background-color: #fff;
+            border-radius: 0 0 .25em .25em;
+            box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
+            padding: 5px 0;
+            width: 40vw;
+        }
+    }
+/* end responsive */
+
+    @media (max-device-width: 480px) {
+        .twitter-typeahead {
+            box-sizing: initial !important;
+            width: 100% !important;
+        }
+    }
+
+    @media (max-device-width: 480px) {
+        .typeahead {
+            background-color: #fff;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            margin-bottom: 0;
+        }
+    }
+
+    @media (max-device-width: 480px) {
+        .tt-dropdown-menu {
+            background-color: #fff;
+            border-radius: 0 0 .25em .25em;
+            box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
+            padding: 5px 0;
+            width: 100%;
+        }
+    }
+
+    .typeahead, .tt-query, .tt-hint {
+        padding: .3em 1em !important;
+        border: 1px #d9d9d9 solid !important;
+        vertical-align: top;
+        font-size: 1.125em;
+        height: initial !important;
+    }
+
+    .typeahead {
+        background-color: #fff;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .typeahead:focus {
+        border: 0px solid #ddd;
+    }
+    .tt-query {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    }
+    .tt-hint {
+        color: #999;
+    }
+    .tt-dropdown-menu {
+        background-color: #fff;
+        border-radius: 0 0 .25em .25em;
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
+        padding: 5px 0;
+        width: 100%;
+    }
+    .tt-suggestion {
+        font-family: Roboto;
+        font-size: 15px;
+        line-height: 18px;
+        padding: 0px 10px;
+        text-align: left;
+    }
+    .tt-suggestion.tt-cursor {
+        color: #000;
+        background-color: #ddd;
+    }
+    .tt-suggestion p {
+        margin: 3px 0 !important;
+    }

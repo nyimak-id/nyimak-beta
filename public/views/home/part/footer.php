@@ -26,6 +26,8 @@
 <script src="<?php print base_url() ?>resources/js/jquery.min.js"></script>
 <script src="<?php print base_url() ?>resources/js/bootstrap.min.js"></script>
 <script src="<?php print base_url() ?>resources/js/nprogress.js"></script>
+<script src="<?php print base_url() ?>resources/js/typeahead.js"></script>
+<script src="<?php print base_url() ?>resources/js/toastr.min.js"></script>
 <script src="<?php print base_url() ?>resources/js/nyimak.min.js"></script>
 <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];

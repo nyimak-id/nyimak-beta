@@ -1,11 +1,11 @@
-# NYIMAK ID
-Nyimak ID - Beta Development
+# SITUS KUMPULAN VIDEO LUCU INDONESIA
+Nyimak ID - Make Me Happy
 
-    Situs Video Lucu Indonesia
+    Tag Line This Site -> Make Me Happy
 
 More Info
 
-    http://nyimak.id
+    http://nyimak.id ( Development )
     
 More Contact
 

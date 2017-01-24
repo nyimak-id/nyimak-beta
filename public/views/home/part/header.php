@@ -9,6 +9,7 @@
     <link rel="icon" href="favicon.ico">
     <title><?php if(isset($title)) { echo $title; } ?></title>
     <link href="<?php print base_url() ?>resources/css/custom.css" rel="stylesheet">
+    <link href="<?php print base_url() ?>resources/css/toastr.css" rel="stylesheet">
     <link href="<?php print base_url() ?>resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php print base_url() ?>resources/css/font-awesome/css/font-awesome.css" rel="stylesheet">
 </head>
@@ -30,9 +31,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-left" style="padding-left: 40px;padding-right: 40px;margin-top: 15px" action="/pencarian" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" style="border-radius: 0px;font-size: 16px;">
+                    <input type="text" id="q" class= "typeahead tt-query" name="q" placeholder="Search" style="border-radius: 0px;font-size: 16px;">
                     <span class="input-group-btn">
-                <button type="submit" class="btn btn-default" style="border-radius: 0px;background: #f8f8f8;font-weight: 400;font-size:14px;text-transform: uppercase"><i class="fa fa-search"></i> search</button>
+                <button type="submit" class="btn btn-default" style="border-radius: 0px;background: #f8f8f8;font-weight: 400;font-size:14px;text-transform: uppercase"><i class="fa fa-search" style="margin: 0 15px;"></i></button>
               </span>
                 </div>
             </form>

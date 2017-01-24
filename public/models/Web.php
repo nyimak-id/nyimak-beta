@@ -61,7 +61,7 @@ class Web extends CI_Model
 
     function detail_videos($url)
     {
-        $query = $this->db->query("SELECT * FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user JOIN tbl_category as c ON a.category_id = c.id_category WHERE   a.slug_video = '$url'");
+        $query = $this->db->query("SELECT a.id_video, a.judul_video, a.slug_video, a.embed, a.thumbnail, a.deskripsi_video, a.category_id, a.user_id, a.views, a.date_created, b.nama_user, b.id_user, .b.foto_user, b.username, c.id_category, c.nama_category, c.slug_category FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user JOIN tbl_category as c ON a.category_id = c.id_category WHERE   a.slug_video = '$url'");
 
         if($query->num_rows() > 0)
         {
@@ -84,6 +84,12 @@ class Web extends CI_Model
         $query  = "SELECT * FROM tbl_developers limit $offset ,$limit";
         $result = $this->db->query($query)->result();
         return $result;
+    }
+
+    function search_json()
+    {
+        $query = $this->db->get('tbl_videos');
+        return $query->result();
     }
 
     function get_pages($id_pages)

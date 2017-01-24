@@ -108,6 +108,7 @@ $('#users').typeahead({
         source: users.ttAdapter()
     });
 
+
 var developers = new Bloodhound({
     datumTokenizer: function(d) {
         return Bloodhound.tokenizers.whitespace(d.judul);

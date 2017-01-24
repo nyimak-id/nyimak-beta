@@ -79,6 +79,7 @@ class Developers extends CI_Controller
             $data['keyword'] = strip_tags($keyword);
             $check = strlen(preg_replace('/[^a-zA-Z]/', '', $keyword));
             if (!empty($keyword) && $check > 2) {
+
                 $offset = (isset($_GET['page'])) ? $this->security->xss_clean($_GET['page']) : 0;
                 $total = $this->auth->total_search_developers($keyword);
                 //config pagination

@@ -1,4 +1,4 @@
-"console" in window && console.log("%cHi Developer\nIf you find an error please report  on this page %chttps://tube.id/bug/\n%cGive your feedback on this page %chttps://tube.id/feedback/",
+"console" in window && console.log("%cHi Developer\nIf you find an error please report  on this page %chttps://nyimak.id/bug/\n%cGive your feedback on this page %chttps://nyimak.id/feedback/",
     "color: #000000; font-size: 17px; line-height: 2",
     "color: #2bbbad; font-size: 17px; line-height: 2; font-style: normal",
     "color: #000000; font-size: 17px; line-height: 2",
