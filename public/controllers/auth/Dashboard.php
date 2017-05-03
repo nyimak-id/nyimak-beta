@@ -134,7 +134,7 @@ class Dashboard extends CI_Controller
         if($this->auth->auth_id())
         {
             $this->auth->logout();
-            redirect('auth/login?source=dashboard&utf8=✓');
+            redirect('/');
         }else{
             show_404();
             return FALSE;

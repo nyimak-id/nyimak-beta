@@ -1,4 +1,10 @@
-<img src="<?php print base_url('resources/images/about-header.jpg') ?>" class="img-responsive" style="margin-top:20px">
+<div class="jumbotron " style="margin-top: 25px; padding-top: 105px;padding-bottom:90px; background: url(<?php echo base_url(); ?>resources/images/bg.png) center center no-repeat #20231E;">
+    <div class="container" style="text-align: center; color: white;">
+        <h1 style="font-family: Comforta; font-weight: 300;">About Us</h1>
+        <p style="font-family: Roboto; font-weight: 200;">This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-danger btn-lg " href="#developers" role="button" style="border-radius: 0px;font-family: Roboto;font-weight: 300;color: #fefefe;background-color: #e62117;border-color: #e62117;">Core Developer</a></p>
+    </div>
+</div>
 <?php foreach ($data_pages->result() as $hasil) { ?>
 <div class="container" style="margin-top: 20px">
     <div class="row">
@@ -23,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div class="row" style="margin-top: 30px">
+    <div class="row" style="margin-top: 30px" id="developers">
         <div clas="developer" style="text-align: center;font-family: Roboto;font-size: 40px;font-weight: 300">
             Core Developer
             <p style="font-size: 20px">Nyimak.ID - Make Me Happy adalah situs dari kumpulan-kumpulan video lucu yang ada didunia ini yang bersumber dari youtube.</p>

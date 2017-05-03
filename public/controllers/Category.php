@@ -32,30 +32,29 @@ class Category extends CI_Controller
 
     public function detail($slug)
     {
-        //
-    }
+        $slug = $this->uri->segment(2);
+        //config pagination
+        $config['base_url'] = base_url().'category/'.$slug.'/index/';
+        $config['total_rows'] = $this->web->count_category($slug);
+        $config['per_page'] = 12;
+        //instalasi paging
+        $this->pagination->initialize($config);
+        //deklare halaman
+        $halaman            =  $this->uri->segment(4);
+        $halaman            =  $halaman==''? 0 : $halaman;
 
-
-    function get_category()
-    {
-        $page   =  $_GET['page'];
-        $category = $this->web->get_category($page);
-        foreach($category as $hasil){
-
-            echo '<div class="col-md-3">
-                    <div class="card card-category">
-                        <a href="'.base_url().'category/'.$hasil->slug_category.'/" style="text-decoration: none" class="link-category">
-                            <div class="card-image" style="height: 164px;min-height: 164px">
-                                <img class="img-responsive" src="'.base_url().'resources/images/category/thumb/'.$hasil->thumbnail.'" style="width: 100%;height: 100%">
-                            </div>
-                            <div class="card-content" style="text-align:center;font-size:18px;font-weight:500;font-family:Roboto;text-transform: uppercase;">
-                                '.$hasil->nama_category.'
-                            </div>
-                        </a>
-                    </div>
-                </div>';
-        }
-        exit;
+        $data = array(
+            'title'        => $this->web->get_category_judul($slug)->nama_category. ' &middot; ' . sistem('site_title'),
+            'keywords'     => sistem('keywords'),
+            'descriptions' => sistem('descriptions'),
+            'author'       => sistem('site_title'),
+            'nama_category'=> $this->web->get_category_judul($slug)->nama_category,
+            'data_videos'  => $this->web->index_category($halaman,$config['per_page'],$slug),
+            'paging'       => $this->pagination->create_links()
+        );
+        $this->load->view('home/part/header', $data);
+        $this->load->view('home/layout/category/detail');
+        $this->load->view('home/part/footer');
     }
 
 }

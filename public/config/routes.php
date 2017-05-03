@@ -60,3 +60,15 @@ $route['watch/(:any)'] = "watch/detail/$1";
 /* routing pages */
 $route['about'] = "pages/about";
 $route['terms-conditions'] = "pages/terms_conditions";
+
+$route['user/(:any)'] = "user/detail/$1";
+$route['user/(:any)/(:any)'] = "user/detail/index";
+$route['user/(:any)/(:any)/(:num)'] = "user/detail/index/$1";
+$route['user/(:any)/(:any)/(:num)'] = "user/detail/index/$1";
+
+$route['category/(:any)'] = "category/detail/$1";
+$route['category/(:any)/(:any)'] = "category/detail/index";
+$route['category/(:any)/(:any)/(:num)'] = "category/detail/index/$1";
+$route['category/(:any)/(:any)/(:num)'] = "category/detail/index/$1";
+
+$route['sitemap\.xml'] = "home/sitemap";

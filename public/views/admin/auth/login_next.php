@@ -8,10 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
     <title><?php print $title ?> </title>
-    <link href="<?php print base_url() ?>resources/css/login.css" rel="stylesheet">
-    <link href="<?php print base_url() ?>resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php print base_url() ?>resources/css/toastr.css" rel="stylesheet">
-    <link href="<?php print base_url() ?>resources/css/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php print base_url() ?>resources/css/application-cd717b2b5b13e210278009fd083914493edd7b190e3fd2a30e8fa0cc40cff458.css" rel="stylesheet">
 </head>
 <body style="background: #F1F1F1;">
 <div class="container" style="margin-top: 80px">
@@ -68,11 +65,7 @@
     </div>
 </div>
 
-<script src="<?php print base_url() ?>resources/js/jquery.min.js"></script>
-<script src="<?php print base_url() ?>resources/js/bootstrap.min.js"></script>
-<script src="<?php print base_url() ?>resources/js/nprogress.js"></script>
-<script src="<?php print base_url() ?>resources/js/toastr.min.js"></script>
-<script src="<?php print base_url() ?>resources/js/ajax_login.js"></script>
+<script src="<?php print base_url() ?>resources/js/application-d6e4793849780b0b6ce46ed3e6d0753782d68a02e0670b62f700e488b2a9b305.js"></script>
 <script>
     jQuery(document).ready(function() {
         NProgress.start();

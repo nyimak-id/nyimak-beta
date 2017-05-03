@@ -206,12 +206,76 @@ class Auth extends CI_Model{
         return $this->db->get('tbl_category');
     }
 
+    function get_playlist()
+    {
+        $this->db->order_by('nama_playlist ASC');
+        return $this->db->get('tbl_playlist');
+    }
+
     function edit_videos($id_videos)
     {
         $id_videos  =  array('id_video'=> $id_videos);
         return $this->db->get_where('tbl_videos',$id_videos);
     }
     /* end fungsi video */
+
+    /* fungsi playlist */
+    function count_playlist()
+    {
+        return $this->db->get('tbl_playlist');
+    }
+
+    function index_playlist($halaman,$batas)
+    {
+        $query = "SELECT * FROM tbl_playlist ORDER BY id_playlist DESC limit $halaman, $batas";
+        return $this->db->query($query);
+    }
+
+    function edit_playlist($id_playlist)
+    {
+        $id_playlist  =  array('id_playlist'=> $id_playlist);
+        return $this->db->get_where('tbl_playlist',$id_playlist);
+    }
+
+    function search_playlist_json()
+    {
+        $query = $this->db->get('tbl_playlist');
+        return $query->result();
+    }
+
+    function total_search_playlist($keyword)
+    {
+        $query = $this->db->like('nama_playlist',$keyword)->get('tbl_playlist');
+
+        if($query->num_rows() > 0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    function search_index_playlist($keyword,$limit,$offset)
+    {
+        $query = $this->db->select('id_playlist, nama_playlist, deskripsi, slug_playlist')
+            ->from('tbl_playlist')
+            ->limit($limit,$offset)
+            ->like('nama_playlist',$keyword)
+            ->limit($limit,$offset)
+            ->order_by('id_playlist','DESC')
+            ->get();
+        if($query->num_rows() > 0)
+        {
+            return $query;
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+    /* end fungsi playlist */
 
     /* fungsi pages */
     function count_pages()

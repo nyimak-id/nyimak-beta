@@ -110,7 +110,7 @@ class Login extends CI_Controller {
                             'auth_email'        => $auth->email_user,
                             'auth_foto'         => $auth->foto_user
                         ));
-                        redirect('auth/dashboard/');
+                        redirect('/');
                     }
                 }else{
                     //create data array

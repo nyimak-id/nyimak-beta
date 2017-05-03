@@ -1,5 +1,9 @@
 <div class="container" style="margin-top: 80px">
     <div class="row">
+        <div class="col-md-12">
+            <h3 style="font-family: Roboto;font-weight: 500;text-transform: uppercase">Categories</h3>
+            <hr>
+        </div>
         <div id="category"></div>
     </div>
     <div class="row">

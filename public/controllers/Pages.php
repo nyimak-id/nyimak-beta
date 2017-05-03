@@ -55,7 +55,7 @@ class Pages extends CI_Controller
                         </div>
                         <div class="card-content" style="min-height: 60px;text-align: center;">
                             <p style="margin-bottom: 2px;font-size:24px;font-family:Roboto;font-weight:300">'.$developer->nama.'</p>
-                            <p style="color: #84909f;font-size: 15px;margin-bottom: 15px;margin-top:10px;font-familiy:Roboto;font-weight:300;font-style:italic;"> '.$developer->jabatan.'</p>
+                            <p style="color: #84909f;font-size: 15px;margin-bottom: 15px;margin-top:10px;font-familiy:Roboto;font-weight:300;"> '.$developer->jabatan.'</p>
                             <a data-original-title="LinkedIn" rel="tooltip" href="'.$developer->linkedin.'" target="_blank" class="btn btn-linkedin btn-sm" data-placement="left">
                                 <i class="fa fa-linkedin"></i>
                             </a>

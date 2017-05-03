@@ -50,12 +50,42 @@
                         </div>
 
                         <div class="form-group">
+                            <label>Playlist Video</label>
+                            <select class="form-control" name="playlist_video" id="kategori">
+                                <option value="" selected="selected">- - Pilih Playlist Video - -</option>
+                                <?php
+                                foreach($get_playlist->result_array() as $row)
+                                {
+                                    if($row['id_playlist']== $playlist)
+                                    {
+                                        ?>
+                                        <option value="<?php echo $row['id_playlist']; ?>" selected="selected"><?php echo $row['nama_playlist']; ?></option>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <option value="<?php echo $row['id_playlist']; ?>"><?php echo $row['nama_playlist']; ?></option>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label>Embed Videos</label>
                             <input type="text" class="form-control" name="embed_video" placeholder="Embed Video">
                         </div>
                         <div class="form-group">
                             <label>Descriptions Video</label>
                             <textarea class="ckeditor" rows="6" name="descriptions" placeholder="Descriptions Video"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Meta Keywords</label>
+                            <input type="text" class="form-control" name="meta_keywords" placeholder="Meta Keywords">
+                        </div>
+                        <div class="form-group">
+                            <label>Descriptions Video</label>
+                            <textarea class="form-control" rows="6" name="meta_descriptions" placeholder="Meta Descriptions"></textarea>
                         </div>
                         <div class="submit" style="margin-bottom: 7px">
                             <button type="submit" class="btn btn-danger btn-save btn-fill" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Saving..."><i class="fa fa-save"></i> Simpan</button>

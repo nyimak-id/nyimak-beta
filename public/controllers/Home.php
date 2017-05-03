@@ -24,12 +24,54 @@ class Home extends CI_Controller {
                 'descriptions'  => sistem('descriptions'),
                 'author'        => sistem('site_title'),
                 'video_personal'=> $this->web->get_personal_video(),
-                'video_popular' => $this->web->home_sidebar_popular()
+                'video_popular' => $this->web->home_sidebar_popular(),
+                'category_header'=> $this->web->category_header()
         );
 		$this->load->view('home/part/header', $data);
         $this->load->view('home/layout/home/home');
         $this->load->view('home/part/footer');
 	}
+
+	public function sitemap()
+    {
+        $data = array(
+                    'data_sitemap' => $this->web->sitemap(),
+        );
+        $this->load->view('home/layout/sitemap/sitemap_xml.php', $data);
+    }
+
+
+    function get_playlist()
+    {
+        $page   =  $_GET['page'];
+        $videos = $this->web->get_playlist($page);
+        foreach($videos as $video){
+            if(strlen($video->nama_playlist)<22)
+            {
+                $judul = '<a href="'.base_url('playlist').'/'.$video->slug_playlist.'/" style="font-size: 18px;font-family: Roboto;font-weight: 400;text-decoration: none;" title="'.$video->nama_playlist.'">'.$video->nama_playlist.'</a>';
+            }else{
+                $judul = '<a href="'.base_url('playlist').'/'.$video->slug_playlist.'/" style="font-size: 18px;font-family: Roboto;font-weight: 400;text-decoration: none;" title="'.$video->nama_playlist.'">'.substr($video->nama_playlist, 0,22).'...</a>';
+
+            }
+
+            $jml = $this->db->query("SELECT COUNT(playlist_id) as jml FROM tbl_videos WHERE playlist_id='$video->id_playlist'")->row();
+
+            echo '<div class="col-md-3">
+                    <div class="card card-playlist" style="min-height: 230px">
+                    <a href="'.base_url().'playlist/'.$video->slug_playlist.'/">
+                        <div class="card-image" style="height: 150px;min-height: 150px">
+                            <img class="img-responsive" src="'.base_url().'resources/images/playlist/thumb/'.$video->thumbnail.'" style="width: 100%;height: 100%">
+                        </div>
+                    </a>    
+                        <div class="card-content" style="min-height: 80px">
+                            '.$judul.'
+                            <p style="padding-top: 5px"><i class="fa fa-list-ul"></i> <b>'.$jml->jml.'</b> VIDEOS</p>
+                        </div>
+                    </div>
+                </div>';
+        }
+        exit;
+    }
 
 	function get_videos_terbaru()
     {
@@ -46,12 +88,12 @@ class Home extends CI_Controller {
             echo '<div class="col-md-3">
                     <div class="card card-video" style="min-height: 230px">
                     <a href="'.base_url().'watch/'.$video->slug_video.'/">
-                        <div class="card-image" style="height: 164px;min-height: 164px">
+                        <div class="card-image" style="height: 150px;min-height: 150px">
                             <img class="img-responsive" src="'.base_url().'resources/images/videos/thumb/'.$video->thumbnail.'" style="width: 100%;height: 100%">
                         </div>
                     </a>    
                         <div class="card-content" style="min-height: 60px">
-                            <p style="color: #84909f;font-size: 11px;padding-bottom: 5px">'.$this->web->tgl_tunggal($video->date_created).' '.$this->web->bulan_inggris($video->date_created).', '.$this->web->year_tunggal($video->date_created).' </p>
+                            <p style="color: #84909f;font-size: 11px;padding-bottom: 5px">'.$this->web->time_elapsed_string($video->date_created).' </p>
                             '.$judul.'
                         </div>
                         <div class="card-autor" style="padding: 1px 18px;background: #ffffff">
@@ -79,7 +121,7 @@ class Home extends CI_Controller {
             echo '<div class="col-md-3">
                     <div class="card card-video" style="min-height: 230px">
                     <a href="'.base_url().'watch/'.$video->slug_video.'/">
-                        <div class="card-image" style="height: 164px;min-height: 164px">
+                        <div class="card-image" style="height: 150px;min-height: 150px">
                             <img class="img-responsive" src="'.base_url().'resources/images/videos/thumb/'.$video->thumbnail.'" style="width: 100%;height: 100%">
                         </div>
                     </a>
@@ -112,7 +154,7 @@ class Home extends CI_Controller {
             echo '<div class="col-md-3">
                     <div class="card card-video" style="min-height: 230px">
                     <a href="'.base_url().'watch/'.$video->slug_video.'/">
-                        <div class="card-image" style="height: 164px;min-height: 164px">
+                        <div class="card-image" style="height: 150px;min-height: 150px">
                             <img class="img-responsive" src="'.base_url().'resources/images/videos/thumb/'.$video->thumbnail.'" style="width: 100%;height: 100%">
                         </div>
                     </a>
@@ -126,6 +168,44 @@ class Home extends CI_Controller {
                         </div>
                     </div>
                 </div>';
+        }
+        exit;
+    }
+
+
+    function get_category()
+    {
+        $page   =  $_GET['page'];
+        $category = $this->web->get_category($page);
+        foreach($category as $hasil){
+
+            echo '<div class="col-md-3">
+                    <div class="card card-category">
+                        <a href="'.base_url().'category/'.$hasil->slug_category.'/" style="text-decoration: none" class="link-category">
+                            <div class="card-image" style="height: 150px;min-height: 150px">
+                                <img class="img-responsive" src="'.base_url().'resources/images/category/thumb/'.$hasil->thumbnail.'" style="width: 100%;height: 100%">
+                                <span class="post-title"><b>Make a Image Blur Effects With</b></span>
+                            </div>
+                            <div class="card-content" style="text-align:center;font-size:18px;font-weight:500;font-family:Roboto;text-transform: uppercase;">
+                                '.$hasil->nama_category.'
+                            </div>
+                        </a>
+                    </div>
+                </div>';
+        }
+        exit;
+    }
+
+    function get_category_sidebar()
+    {
+        $page   =  $_GET['page'];
+        $category = $this->web->get_category_sidebar($page);
+        foreach($category as $hasil){
+
+            echo '<div class="chip-phantom" style="margin-bottom: 10px;">
+                        <img src="'.base_url().'resources/images/category/thumb/'.$hasil->thumbnail.'" alt="Person" width="96" height="96">
+                        <p style="margin-top:6px"><a href="'.base_url().'category/'.$hasil->slug_category.'/" style="text-decoration:none;text-transform: uppercase;margin-top:15px">'.$hasil->nama_category.'</a></p>
+                  </div>';
         }
         exit;
     }

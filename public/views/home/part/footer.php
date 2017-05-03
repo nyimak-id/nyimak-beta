@@ -22,20 +22,43 @@
         </div>
     </div>
 </footer>
-
-<script src="<?php print base_url() ?>resources/js/jquery.min.js"></script>
-<script src="<?php print base_url() ?>resources/js/bootstrap.min.js"></script>
-<script src="<?php print base_url() ?>resources/js/nprogress.js"></script>
-<script src="<?php print base_url() ?>resources/js/typeahead.js"></script>
-<script src="<?php print base_url() ?>resources/js/toastr.min.js"></script>
-<script src="<?php print base_url() ?>resources/js/nyimak.min.js"></script>
-<script>(function(d, s, id) {
+<script src="<?php print base_url() ?>resources/js/application-d6e4793849780b0b6ce46ed3e6d0753782d68a02e0670b62f700e488b2a9b304.js"></script>
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+
+    function initMap() {
+        var uluru = {lat: -7.529314, lng: 112.239522};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+    $(document).ready(function(){
+        $(".dropdown").hover(
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+                $(this).toggleClass('open');
+            },
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+                $(this).toggleClass('open');
+            }
+        );
+    });
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3ZqgqRwszAQmZhalgrq_UVuXQjeePIy0&callback=initMap">
 </script>
 </body>
 </html>

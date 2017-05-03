@@ -33,6 +33,12 @@
                         <p>Data Videos</p>
                     </a>
                 </li>
+                <li <?php if(isset($playlist)) { echo 'class="active"'; } ?>>
+                    <a href="<?php echo base_url('auth/playlist/') ?>">
+                        <i class="pe-7s-menu"></i>
+                        <p>Playlist Videos</p>
+                    </a>
+                </li>
                 <li <?php if(isset($pages)) { echo 'class="active"'; } ?>>
                     <a href="<?php echo base_url('auth/pages/') ?>">
                         <i class="pe-7s-exapnd2"></i>

@@ -73,7 +73,7 @@ class Category extends CI_Controller
     {
         if($this->auth->auth_id())
         {
-            $limit = 1;
+            $limit = 10;
             $this->load->helper('security');
             $keyword = $this->security->xss_clean($_GET['q']);
             $data['keyword'] = strip_tags($keyword);

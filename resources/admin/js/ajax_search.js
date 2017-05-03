@@ -36,6 +36,24 @@ $('#videos').typeahead({
         source: videos.ttAdapter()
     });
 
+var playlist = new Bloodhound({
+    datumTokenizer: function(d) {
+        return Bloodhound.tokenizers.whitespace(d.judul);
+    },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch: uri+'auth/playlist/json_search',
+});
+videos.initialize();
+videos.clearPrefetchCache();
+$('#playlist').typeahead({
+        highlight: true,
+        hint: true,
+    },
+    {
+        displayKey: 'judul',
+        source: videos.ttAdapter()
+    });
+
 var pages = new Bloodhound({
     datumTokenizer: function(d) {
         return Bloodhound.tokenizers.whitespace(d.judul);

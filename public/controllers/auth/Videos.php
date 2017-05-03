@@ -73,7 +73,7 @@ class Videos extends CI_Controller
     {
         if($this->auth->auth_id())
         {
-            $limit = 10;
+            $limit = 1;
             $this->load->helper('security');
             $keyword = $this->security->xss_clean($_GET['q']);
             $data['keyword'] = strip_tags($keyword);
@@ -133,7 +133,8 @@ class Videos extends CI_Controller
                 'videos'        => TRUE,
                 'type'          => 'add',
                 'thumbnail'     => 'userfile',
-                'cat_videos'    => $this->auth->cat_videos()
+                'cat_videos'    => $this->auth->cat_videos(),
+                'get_playlist'  => $this->auth->get_playlist()
             );
             //load view with data
             $this->load->view('admin/part/header', $data);
@@ -161,6 +162,7 @@ class Videos extends CI_Controller
                 'type'          => 'edit',
                 'thumbnail'     => 'userfile',
                 'cat_videos'    => $this->auth->cat_videos(),
+                'get_playlist'  => $this->auth->get_playlist(),
                 'data_videos'   => $this->auth->edit_videos($id_videos)->row_array()
             );
             //load view with data
@@ -257,7 +259,10 @@ class Videos extends CI_Controller
                                 'slug_video' => url_title(strtolower($this->input->post("judul_video"))),
                                 'embed' => $this->input->post("embed_video"),
                                 'category_id' => $this->input->post("category_video"),
+                                'playlist_id' => $this->input->post("playlist_video"),
                                 'deskripsi_video' => $this->input->post("descriptions"),
+                                'meta_keywords' => $this->input->post("meta_keywords"),
+                                'meta_descriptions' => $this->input->post("meta_descriptions"),
                                 'thumbnail' => $data_upload['file_name'],
                                 'user_id' => $this->session->userdata("auth_id"),
                                 'date_created' => date("Y-m-d H:i:s")
@@ -285,7 +290,10 @@ class Videos extends CI_Controller
                             'slug_video'      => url_title(strtolower($this->input->post("judul_video"))),
                             'embed'           => $this->input->post("embed_video"),
                             'category_id'     => $this->input->post("category_video"),
+                            'playlist_id' => $this->input->post("playlist_video"),
                             'deskripsi_video' => $this->input->post("descriptions"),
+                            'meta_keywords' => $this->input->post("meta_keywords"),
+                            'meta_descriptions' => $this->input->post("meta_descriptions"),
                             'user_id'         => $this->session->userdata("auth_id"),
                             'date_modified'   => date("Y-m-d H:i:s")
                         );
@@ -360,7 +368,10 @@ class Videos extends CI_Controller
                                 'slug_video'      => url_title(strtolower($this->input->post("judul_video"))),
                                 'embed'           => $this->input->post("embed_video"),
                                 'category_id'     => $this->input->post("category_video"),
+                                'playlist_id' => $this->input->post("playlist_video"),
                                 'deskripsi_video' => $this->input->post("descriptions"),
+                                'meta_keywords' => $this->input->post("meta_keywords"),
+                                'meta_descriptions' => $this->input->post("meta_descriptions"),
                                 'thumbnail'       => $data_upload['file_name'],
                                 'user_id'         => $this->session->userdata("auth_id"),
                                 'date_modified'   => date("Y-m-d H:i:s")

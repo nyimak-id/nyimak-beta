@@ -19,9 +19,9 @@ class Watch extends CI_Controller {
         $this->load->library('disqus');
         $data = array(
             'detail_video'  => $this->web->detail_videos($url),
-            'title'         => $this->web->detail_videos($url)->judul_video .' - nyimak.id',
-            'keywords'      => '',
-            'descriptions'  => $this->web->detail_videos($url)->deskripsi_video,
+            'title'         => $this->web->detail_videos($url)->judul_video .' &middot; ' .sistem('site_title'),
+            'keywords'      => $this->web->detail_videos($url)->meta_keywords,
+            'descriptions'  => $this->web->detail_videos($url)->meta_descriptions,
             'author'        => $this->web->detail_videos($url)->nama_user,
             //related video
             'related_video' => $this->web->related_video($this->web->detail_videos($url)->category_id),

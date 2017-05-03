@@ -27,6 +27,14 @@ class Web extends CI_Model
         return $this->db->query($query);
     }
 
+    function get_playlist($page){
+        $offset = 12 * $page;
+        $limit  = 12;
+        $query  = "SELECT * FROM tbl_playlist ORDER BY id_playlist DESC limit $offset ,$limit";
+        $result = $this->db->query($query)->result();
+        return $result;
+    }
+
     function get_videos_terbaru($page){
         $offset = 12 * $page;
         $limit  = 12;
@@ -59,9 +67,17 @@ class Web extends CI_Model
         return $result;
     }
 
+    function get_category_sidebar($page){
+        $offset = 5 * $page;
+        $limit  = 5;
+        $query  = "SELECT * FROM tbl_category ORDER  BY nama_category ASC  limit $offset ,$limit";
+        $result = $this->db->query($query)->result();
+        return $result;
+    }
+
     function detail_videos($url)
     {
-        $query = $this->db->query("SELECT a.id_video, a.judul_video, a.slug_video, a.embed, a.thumbnail, a.deskripsi_video, a.category_id, a.user_id, a.views, a.date_created, b.nama_user, b.id_user, .b.foto_user, b.username, c.id_category, c.nama_category, c.slug_category FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user JOIN tbl_category as c ON a.category_id = c.id_category WHERE   a.slug_video = '$url'");
+        $query = $this->db->query("SELECT a.id_video, a.judul_video, a.slug_video, a.embed, a.thumbnail, a.deskripsi_video, a.meta_keywords, a.meta_descriptions, a.category_id, a.user_id, a.views, a.date_created, b.nama_user, b.id_user, .b.foto_user, b.username, c.id_category, c.nama_category, c.slug_category FROM tbl_videos as a JOIN tbl_users as b ON a.user_id = b.id_user JOIN tbl_category as c ON a.category_id = c.id_category WHERE   a.slug_video = '$url'");
 
         if($query->num_rows() > 0)
         {
@@ -92,13 +108,147 @@ class Web extends CI_Model
         return $query->result();
     }
 
+    function total_search_videos($keyword)
+    {
+        $query = $this->db->like('judul_video',$keyword)->get('tbl_videos');
+
+        if($query->num_rows() > 0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    public function search_index_videos($keyword,$limit,$offset)
+    {
+        $query = $this->db->select('a.id_video, a.category_id, a.judul_video, a.slug_video, a.views, a.thumbnail, a.date_created, b.id_category, b.nama_category, b.slug_category, c.id_user, c.username, c.nama_user')
+            ->from('tbl_videos a')
+            ->join('tbl_category b','a.category_id = b.id_category')
+            ->join('tbl_users c','a.user_id = c.id_user')
+            ->limit($limit,$offset)
+            ->like('a.judul_video',$keyword)
+            ->or_like('b.nama_category',$keyword)
+            ->limit($limit,$offset)
+            ->order_by('a.id_video','DESC')
+            ->get();
+
+        if($query->num_rows() > 0)
+        {
+            return $query;
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    function count_videos($username)
+    {
+        $query = $this->db->select('a.id_video, a.category_id, a.judul_video, a.slug_video, a.views, a.thumbnail, a.date_created, b.id_category, b.nama_category, b.slug_category, c.id_user, c.username, c.nama_user')
+            ->from('tbl_videos a')
+            ->join('tbl_category b','a.category_id = b.id_category')
+            ->join('tbl_users c','a.user_id = c.id_user')
+            ->where('c.username',$username)
+            ->order_by('a.id_video','DESC')
+            ->get();
+
+        if($query->num_rows() > 0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    function index_videos($halaman,$batas,$username)
+    {
+        $query = "SELECT a.id_video, a.category_id, a.judul_video, a.slug_video, a.views, a.thumbnail, a.date_created, b.id_category, b.nama_category, b.slug_category, c.id_user, c.username, c.nama_user, c.foto_user FROM tbl_videos as a JOIN tbl_category as b JOIN tbl_users as c ON a.category_id = b.id_category AND a.user_id = c.id_user WHERE c.username = '$username' limit $halaman, $batas";
+        return $this->db->query($query);
+    }
+
+    function user_videos($username)
+    {
+        $username  =  array('username'=> $username);
+        return $this->db->get_where('tbl_users',$username);
+    }
+
+    function get_nama_user($username)
+    {
+        $query = $this->db->query("SELECT * FROM tbl_users WHERE username = '$username'");
+
+        if($query->num_rows() > 0)
+        {
+            return $query->row();
+        }else
+        {
+            return NULL;
+        }
+    }
+
+    function count_category($slug)
+    {
+        $query = $this->db->select('a.id_video, a.category_id, a.judul_video, a.slug_video, a.views, a.thumbnail, a.date_created, b.id_category, b.nama_category, b.slug_category, c.id_user, c.username, c.nama_user')
+            ->from('tbl_videos a')
+            ->join('tbl_category b','a.category_id = b.id_category')
+            ->join('tbl_users c','a.user_id = c.id_user')
+            ->where('b.slug_category',$slug)
+            ->order_by('a.id_video','DESC')
+            ->get();
+
+        if($query->num_rows() > 0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    function index_category($halaman,$batas,$slug)
+    {
+        $query = "SELECT a.id_video, a.category_id, a.judul_video, a.slug_video, a.views, a.thumbnail, a.date_created, b.id_category, b.nama_category, b.slug_category, b.slug_category, c.id_user, c.username, c.nama_user, c.foto_user FROM tbl_videos as a JOIN tbl_category as b JOIN tbl_users as c ON a.category_id = b.id_category AND a.user_id = c.id_user WHERE b.slug_category = '$slug' limit $halaman, $batas";
+        return $this->db->query($query);
+    }
+
+    function get_category_judul($slug)
+    {
+        $query = $this->db->query("SELECT * FROM tbl_category WHERE slug_category = '$slug'");
+
+        if($query->num_rows() > 0)
+        {
+            return $query->row();
+        }else
+        {
+            return NULL;
+        }
+    }
+
     function get_pages($id_pages)
     {
         $query = $this->db->query("SELECT * FROM tbl_pages WHERE id_page = '$id_pages'");
         return $query;
     }
 
+    function category_header()
+    {
+        $query = "SELECT * FROM tbl_category ORDER BY nama_category ASC limit 0,4";
+        return $this->db->query($query);
+    }
+
+    function sitemap()
+    {
+        $query  =   $this->db->order_by("id_video","DESC")->get("tbl_videos");
+        return $query->result_array();
+    }
+
     //fungsi date
+
     // Fungsi GLobal //
     function tgl_time_indo($date=null){
         $tglindo = date("d-m-Y H:i:s", strtotime($date));
@@ -268,6 +418,68 @@ class Web extends CI_Model
         }
         $formatTanggal = $tanggal ." ". $bulan ." ". $tahun ." Jam ". $jam;
         return $formatTanggal;
+    }
+
+    function time_elapsed_string($datetime, $full = false) {
+        $today = time();
+        $createdday= strtotime($datetime);
+        $datediff = abs($today - $createdday);
+        $difftext="";
+        $years = floor($datediff / (365*60*60*24));
+        $months = floor(($datediff - $years * 365*60*60*24) / (30*60*60*24));
+        $days = floor(($datediff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+        $hours= floor($datediff/3600);
+        $minutes= floor($datediff/60);
+        $seconds= floor($datediff);
+        //year checker
+        if($difftext=="")
+        {
+            if($years>1)
+                $difftext=$years." years ago";
+            elseif($years==1)
+                $difftext=$years." year ago";
+        }
+        //month checker
+        if($difftext=="")
+        {
+            if($months>1)
+                $difftext=$months." months ago";
+            elseif($months==1)
+                $difftext=$months." month ago";
+        }
+        //month checker
+        if($difftext=="")
+        {
+            if($days>1)
+                $difftext=$days." days ago";
+            elseif($days==1)
+                $difftext=$days." day ago";
+        }
+        //hour checker
+        if($difftext=="")
+        {
+            if($hours>1)
+                $difftext=$hours." hours ago";
+            elseif($hours==1)
+                $difftext=$hours." hour ago";
+        }
+        //minutes checker
+        if($difftext=="")
+        {
+            if($minutes>1)
+                $difftext=$minutes." minutes ago";
+            elseif($minutes==1)
+                $difftext=$minutes." minute ago";
+        }
+        //seconds checker
+        if($difftext=="")
+        {
+            if($seconds>1)
+                $difftext=$seconds." seconds ago";
+            elseif($seconds==1)
+                $difftext=$seconds." second ago";
+        }
+        return $difftext;
     }
 
 }
